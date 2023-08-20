@@ -11,7 +11,7 @@ int is_equal_zero(double x)
     return (EPSILON > fabs(x));
 }
 
-int solve_linear(double a, double b, double c, double *answer1, int number_of_roots)
+int solve_linear(double b, double c, double *answer1, int number_of_roots)
 {
     number_of_roots = 1;
     *answer1 = (-1) * c / b;
@@ -26,9 +26,16 @@ int solve_quadratic_equation(double a, double b, double c, double *answer1, doub
     {
         number_of_roots = 0;
     }
-    else if (is_equal_zero(a) && !is_equal_zero(b))
+    else if (is_equal_zero(a))
     {
-        number_of_roots = solve_linear(a, b, c, answer1, number_of_roots);
+        if (is_equal_zero(b))
+        {
+            number_of_roots = 0;
+        }
+        else
+        {
+            number_of_roots = solve_linear(b, c, answer1, number_of_roots);
+        }
     }
     else if (is_equal_zero(d))
     {
@@ -59,7 +66,7 @@ int get_coefficients(double *a, double *b, double *c)
             number[index] = x;
             index++;
         }
-        else if (isspace(x) && isdigit(number[index - 1]))
+        else if ((isspace(x) || x == '\n') && isdigit(number[index - 1]))
         {
             number[index] = '\0';
             index = 0;
