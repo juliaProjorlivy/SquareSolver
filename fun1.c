@@ -4,10 +4,10 @@
 #include <string.h>
 #include <float.h>
 #include <math.h>
-const double EPSILON = 1e-9;
 
 int is_equal_zero(double x)
 {
+    const double EPSILON = 1e-9;
     return (EPSILON > x);
 }
 
@@ -18,8 +18,9 @@ int solve_linear(double a, double b, double c, double *answer1, int number_of_ro
     return number_of_roots;
 }
 
-int solve_quadratic_equation(double a, double b, double c, double *answer1, double *answer2, int number_of_roots)
+int solve_quadratic_equation(double a, double b, double c, double *answer1, double *answer2)
 {
+    int number_of_roots = 0;
     double d = b * b - 4 * a * c;
     if (d < 0)
     {
@@ -58,7 +59,7 @@ int get_coefficients(double *a, double *b, double *c)
             number[index] = x;
             index++;
         }
-        else if ((isspace(x) || x == '\n') && isdigit(number[index - 1]))
+        else if (isspace(x) && isdigit(number[index - 1]))
         {
             number[index] = '\0';
             index = 0;
@@ -109,7 +110,7 @@ int main()
     printf("%lf %lf %lf\n", a, b, c);
     double answer1 = 0, answer2 = 0;
     int number_of_roots;
-    number_of_roots = solve_quadratic_equation(a, b, c, &answer1, &answer2, number_of_roots);
+    number_of_roots = solve_quadratic_equation(a, b, c, &answer1, &answer2);
     switch (number_of_roots)
     {
     case 0:
