@@ -55,25 +55,24 @@ int solve_quadratic_equation(double a, double b, double c, double *answer1, doub
 int get_coefficients(double *a, double *b, double *c)
 {
     double coefficients[3] = {0, 0, 0};
-    char x, number[DBL_DIG] = {'0'};
+    char symbol, number[DBL_DIG] = {'0'};
     int number_of_arg = 0;
     int index = 0;
-    x = getchar();
-    while (number_of_arg < 3)
+    while ((symbol = getchar()) != EOF, number_of_arg < 3)
     {
-        if (isdigit(x))
+        if (isdigit(symbol))
         {
-            number[index] = x;
+            number[index] = symbol;
             index++;
         }
-        else if ((isspace(x) || x == '\n') && isdigit(number[index - 1]))
+        else if ((isspace(symbol) || symbol == '\n') && isdigit(number[index - 1]))
         {
             number[index] = '\0';
             index = 0;
             coefficients[number_of_arg] = atof(number);
             memset(number, '0', DBL_DIG);
             number_of_arg += 1;
-            if (x == '\n')
+            if (symbol == '\n')
             {
                 if (number_of_arg < 3)
                 {
@@ -88,14 +87,14 @@ int get_coefficients(double *a, double *b, double *c)
                 }
             }
         }
-        else if (x == '-' && index == 0)
+        else if (symbol == '-' && index == 0)
         {
-            number[index] = x;
+            number[index] = symbol;
             index++;
         }
-        else if (x == '.' && isdigit(number[index - 1]))
+        else if (symbol == '.' && isdigit(number[index - 1]))
         {
-            number[index] = x;
+            number[index] = symbol;
             index++;
         }
         else
@@ -103,7 +102,6 @@ int get_coefficients(double *a, double *b, double *c)
             index = 0;
             memset(number, '0', DBL_DIG);
         }
-        x = getchar();
     }
     *a = coefficients[0], *b = coefficients[1], *c = coefficients[2];
     return number_of_arg;
