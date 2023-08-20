@@ -8,7 +8,7 @@
 int is_equal_zero(double x)
 {
     const double EPSILON = 1e-9;
-    return (EPSILON > x);
+    return (EPSILON > fabs(x));
 }
 
 int solve_linear(double a, double b, double c, double *answer1, int number_of_roots)
@@ -26,7 +26,7 @@ int solve_quadratic_equation(double a, double b, double c, double *answer1, doub
     {
         number_of_roots = 0;
     }
-    else if (is_equal_zero(fabs(a)) && !is_equal_zero(fabs(b)))
+    else if (is_equal_zero(a) && !is_equal_zero(b))
     {
         number_of_roots = solve_linear(a, b, c, answer1, number_of_roots);
     }
