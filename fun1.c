@@ -4,49 +4,49 @@
 #include <string.h>
 #include <float.h>
 #include <math.h>
-#define EPSILON 1e-9
+const double EPSILON = 1e-9;
 
 int is_equal_zero(double x)
 {
-    return (EPSILON > fabs(x));
+    return (EPSILON > x);
 }
 
-int solve_linear(double a, double b, double c, double *answer1, int *n)
+int solve_linear(double a, double b, double c, double *answer1, int number_of_roots)
 {
-    *n = 1;
+    number_of_roots = 1;
     *answer1 = (-1) * c / b;
-    return *n;
+    return number_of_roots;
 }
 
-int solve_quadratic_equation(double a, double b, double c, double *answer1, double *answer2, int *n)
+int solve_quadratic_equation(double a, double b, double c, double *answer1, double *answer2, int number_of_roots)
 {
     double d = b * b - 4 * a * c;
     if (d < 0)
     {
-        *n = 0;
+        number_of_roots = 0;
     }
     else if (is_equal_zero(fabs(a)) && !is_equal_zero(fabs(b)))
     {
-        *n = solve_linear(a, b, c, answer1, n);
+        number_of_roots = solve_linear(a, b, c, answer1, number_of_roots);
     }
     else if (is_equal_zero(d))
     {
-        *n = 1;
+        number_of_roots = 1;
         *answer1 = ((-1) * b / (2 * a));
     }
     else
     {
-        *n = 2;
+        number_of_roots = 2;
         double sq_d = sqrt(d);
         *answer1 = ((-1) * b + sq_d) / (2 * a);
         *answer2 = ((-1) * b - sq_d) / (2 * a);
     }
-    return *n;
+    return number_of_roots;
 }
 
 int get_coefficients(double *a, double *b, double *c)
 {
-    double coefficients[3];
+    double coefficients[3] = {0, 0, 0};
     char x, number[DBL_DIG] = {'0'};
     int number_of_arg = 0;
     int index = 0;
@@ -108,9 +108,9 @@ int main()
     get_coefficients(&a, &b, &c);
     printf("%lf %lf %lf\n", a, b, c);
     double answer1 = 0, answer2 = 0;
-    int n;
-    n = solve_quadratic_equation(a, b, c, &answer1, &answer2, &n);
-    switch (n)
+    int number_of_roots;
+    number_of_roots = solve_quadratic_equation(a, b, c, &answer1, &answer2, number_of_roots);
+    switch (number_of_roots)
     {
     case 0:
         printf("no roots");
