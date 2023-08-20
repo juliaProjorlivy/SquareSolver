@@ -121,13 +121,13 @@ int main()
     switch (number_of_roots)
     {
     case 0:
-        printf("no roots");
+        printf("no roots\n");
         break;
     case 1:
         printf("the root is:\nx = %lf\n", answer1);
         break;
     case 2:
-        printf("the roots are:\nx1 = %lf\nx2 = %lf", answer1, answer2);
+        printf("the roots are:\nx1 = %lf\nx2 = %lf\n", answer1, answer2);
         break;
     }
 
