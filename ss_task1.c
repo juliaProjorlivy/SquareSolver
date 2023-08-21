@@ -65,8 +65,29 @@ int get_coefficients(double *a, double *b, double *c)
             number[index] = symbol;
             index++;
         }
-        else if ((isspace(symbol) || symbol == '\n'))
+        else if ((isspace(symbol)))
         {
+            // flag = 1;
+            // if(symbol == '\n'){
+            //     if (isdigit(number[index - 1]) || isspace(number[index - 1])){
+            //         number[index] = '\0';
+            //         index = 0;
+            //         coefficients[number_of_arg] = atof(number);
+            //         memset(number, '0', DBL_DIG);
+            //         number_of_arg += 1;
+            //     }
+
+            //     if (number_of_arg < 3)
+            //         {
+            //             printf("the number of arguments is less than 3. please, try again:\n");
+            //             number_of_arg = 0;
+            //             index = 0;
+            //             memset(number, '0', DBL_DIG);
+            //         }
+            //     else{
+            //         break;
+            //     }
+
             flag = 1;
             if (isdigit(number[index - 1]) || isspace(number[index - 1]))
             {
@@ -75,21 +96,22 @@ int get_coefficients(double *a, double *b, double *c)
                 coefficients[number_of_arg] = atof(number);
                 memset(number, '0', DBL_DIG);
                 number_of_arg += 1;
-                if (symbol == '\n')
+            }
+            if (symbol == '\n')
+            {
+                if (number_of_arg < 3)
                 {
-                    if (number_of_arg < 3)
-                    {
-                        printf("the number of arguments is less than 3. please, try again:\n");
-                        number_of_arg = 0;
-                        index = 0;
-                        memset(number, '0', DBL_DIG);
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    printf("the number of arguments is less than 3. please, try again:\n");
+                    number_of_arg = 0;
+                    index = 0;
+                    memset(number, '0', DBL_DIG);
+                }
+                else
+                {
+                    break;
                 }
             }
+
             else
             {
                 index = 0;
