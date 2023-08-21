@@ -57,34 +57,43 @@ int get_coefficients(double *a, double *b, double *c)
     double coefficients[3] = {0, 0, 0};
     char symbol, number[DBL_DIG] = {'0'};
     int number_of_arg = 0;
-    int index = 0;
-    while ((symbol = getchar()) != EOF, number_of_arg < 3)
+    int index = 0, flag = 1;
+    while ((symbol = getchar()) != EOF && number_of_arg < 3)
     {
-        if (isdigit(symbol))
+        if (isdigit(symbol) && flag)
         {
             number[index] = symbol;
             index++;
         }
-        else if ((isspace(symbol) || symbol == '\n') && isdigit(number[index - 1]))
+        else if ((isspace(symbol) || symbol == '\n'))
         {
-            number[index] = '\0';
-            index = 0;
-            coefficients[number_of_arg] = atof(number);
-            memset(number, '0', DBL_DIG);
-            number_of_arg += 1;
-            if (symbol == '\n')
+            flag = 1;
+            if (isdigit(number[index - 1]) || isspace(number[index - 1]))
             {
-                if (number_of_arg < 3)
+                number[index] = '\0';
+                index = 0;
+                coefficients[number_of_arg] = atof(number);
+                memset(number, '0', DBL_DIG);
+                number_of_arg += 1;
+                if (symbol == '\n')
                 {
-                    printf("the number of arguments is less than 3. please, try again:\n");
-                    number_of_arg = 0;
-                    index = 0;
-                    memset(number, '0', DBL_DIG);
+                    if (number_of_arg < 3)
+                    {
+                        printf("the number of arguments is less than 3. please, try again:\n");
+                        number_of_arg = 0;
+                        index = 0;
+                        memset(number, '0', DBL_DIG);
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
-                else
-                {
-                    break;
-                }
+            }
+            else
+            {
+                index = 0;
+                memset(number, '0', DBL_DIG);
             }
         }
         else if (symbol == '-' && index == 0)
@@ -99,6 +108,7 @@ int get_coefficients(double *a, double *b, double *c)
         }
         else
         {
+            flag = 0;
             index = 0;
             memset(number, '0', DBL_DIG);
         }
@@ -111,22 +121,29 @@ int main()
 {
     printf("enter the coefficients separated by spaces:\n");
     double a = 0, b = 0, c = 0;
-    get_coefficients(&a, &b, &c);
-    printf("%lf %lf %lf\n", a, b, c);
-    double answer1 = 0, answer2 = 0;
-    int number_of_roots;
-    number_of_roots = solve_quadratic_equation(a, b, c, &answer1, &answer2);
-    switch (number_of_roots)
+    int number_of_arg = get_coefficients(&a, &b, &c);
+    if (number_of_arg == 3)
     {
-    case 0:
-        printf("no roots\n");
-        break;
-    case 1:
-        printf("the root is:\nx = %lf\n", answer1);
-        break;
-    case 2:
-        printf("the roots are:\nx1 = %lf\nx2 = %lf\n", answer1, answer2);
-        break;
+        printf("%lf %lf %lf\n", a, b, c);
+        double answer1 = 0, answer2 = 0;
+        int number_of_roots;
+        number_of_roots = solve_quadratic_equation(a, b, c, &answer1, &answer2);
+        switch (number_of_roots)
+        {
+        case 0:
+            printf("no roots\n");
+            break;
+        case 1:
+            printf("the root is:\nx = %lf\n", answer1);
+            break;
+        case 2:
+            printf("the roots are:\nx1 = %lf\nx2 = %lf\n", answer1, answer2);
+            break;
+        }
+    }
+    else
+    {
+        printf("error!\n");
     }
 
     return 0;
