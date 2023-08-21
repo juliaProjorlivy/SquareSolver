@@ -4,6 +4,7 @@
 #include <string.h>
 #include <float.h>
 #include <math.h>
+#include <assert.h>
 
 int is_equal_zero(double x)
 {
@@ -13,8 +14,8 @@ int is_equal_zero(double x)
 
 int solve_linear(double b, double c, double *answer1, int number_of_roots)
 {
-    number_of_roots = 1;
-    *answer1 = (-1) * c / b;
+    number_of_roots = is_equal_zero(b) ? 0 : 1;
+    *answer1 = is_equal_zero(b) ? 0 : ((-1) * c / b);
     return number_of_roots;
 }
 
@@ -28,14 +29,7 @@ int solve_quadratic_equation(double a, double b, double c, double *answer1, doub
     }
     else if (is_equal_zero(a))
     {
-        if (is_equal_zero(b))
-        {
-            number_of_roots = 0;
-        }
-        else
-        {
-            number_of_roots = solve_linear(b, c, answer1, number_of_roots);
-        }
+        number_of_roots = solve_linear(b, c, answer1, number_of_roots);
     }
     else if (is_equal_zero(d))
     {
@@ -55,35 +49,36 @@ int solve_quadratic_equation(double a, double b, double c, double *answer1, doub
 int get_coefficients(double *a, double *b, double *c)
 {
     double coefficients[3] = {0, 0, 0};
-    char symbol, number[DBL_DIG] = {'0'};
+    char number_buf[DBL_DIG] = {'0'};
+    char symbol = '0';
     int number_of_arg = 0;
-    int index = 0, flag = 1;
-    while ((symbol = getchar()) != EOF && number_of_arg < 3)
+    int index = 0, nothing_before_digit = 1;
+    while (((symbol = getchar()) != EOF) && (number_of_arg < 3))
     {
-        if (isdigit(symbol) && flag)
+        if (isdigit(symbol) && nothing_before_digit)
         {
-            number[index] = symbol;
+            number_buf[index] = symbol;
             index++;
         }
         else if ((isspace(symbol)))
         {
-            flag = 1;
-            if (isdigit(number[index - 1]) || isspace(number[index - 1]))
+            nothing_before_digit = 1;
+            if (isdigit(number_buf[index - 1]) || isspace(number_buf[index - 1]))
             {
-                number[index] = '\0';
+                number_buf[index] = '\0';
                 index = 0;
-                coefficients[number_of_arg] = atof(number);
-                memset(number, '0', DBL_DIG);
+                coefficients[number_of_arg] = atof(number_buf);
+                memset(number_buf, '0', DBL_DIG);
                 number_of_arg += 1;
             }
             if (symbol == '\n')
             {
                 if (number_of_arg < 3)
                 {
-                    printf("the number of arguments is less than 3. please, try again:\n");
+                    printf("the number_buf of arguments is less than 3. please, try again:\n");
                     number_of_arg = 0;
                     index = 0;
-                    memset(number, '0', DBL_DIG);
+                    memset(number_buf, '0', DBL_DIG);
                 }
                 else
                 {
@@ -94,27 +89,30 @@ int get_coefficients(double *a, double *b, double *c)
             else
             {
                 index = 0;
-                memset(number, '0', DBL_DIG);
+                memset(number_buf, '0', DBL_DIG);
             }
         }
         else if (symbol == '-' && index == 0)
         {
-            number[index] = symbol;
+            number_buf[index] = symbol;
             index++;
         }
-        else if (symbol == '.' && isdigit(number[index - 1]))
+        else if (symbol == '.' && isdigit(number_buf[index - 1]))
         {
-            number[index] = symbol;
+            number_buf[index] = symbol;
             index++;
         }
         else
         {
-            flag = 0;
+            nothing_before_digit = 0;
             index = 0;
-            memset(number, '0', DBL_DIG);
+            memset(number_buf, '0', DBL_DIG);
         }
     }
     *a = coefficients[0], *b = coefficients[1], *c = coefficients[2];
+    assert(a != NULL);
+    assert(b != NULL);
+    assert(c != NULL);
     return number_of_arg;
 }
 
@@ -129,6 +127,8 @@ int main()
         double answer1 = 0, answer2 = 0;
         int number_of_roots;
         number_of_roots = solve_quadratic_equation(a, b, c, &answer1, &answer2);
+        assert(&answer1 != NULL);
+        assert(&answer2 != NULL);
         switch (number_of_roots)
         {
         case 0:
