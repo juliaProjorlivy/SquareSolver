@@ -14,7 +14,7 @@ int is_equal_zero(double x)
 
 int solve_linear(double b, double c, double *answer1, int number_of_roots)
 {
-    number_of_roots = is_equal_zero(b) ? 0 : 1;
+    number_of_roots = is_equal_zero(b) ? 3 : 1;
     *answer1 = is_equal_zero(b) ? 0 : ((-1) * c / b);
     return number_of_roots;
 }
@@ -139,6 +139,9 @@ int main()
             break;
         case 2:
             printf("the roots are:\nx1 = %lf\nx2 = %lf\n", answer1, answer2);
+            break;
+        case 3:
+            printf("infinite number of roots\n");
             break;
         }
     }
