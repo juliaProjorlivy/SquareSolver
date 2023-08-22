@@ -22,7 +22,14 @@ int is_equal_zero(double x)
 
 int solve_linear(double b, double c, double *answer1, int number_of_roots)
 {
-    number_of_roots = is_equal_zero(b) ? INFINITY_SOL : ONE_ROOT;
+    if(!is_equal_zero(c))
+    {
+        number_of_roots = is_equal_zero(b) ? NO_ROOTS : ONE_ROOT;
+    }
+    else
+    {
+        number_of_roots = is_equal_zero(b) ? INFINITY_SOL : ONE_ROOT;
+    }
     double value = (-1) * c / b;
     *answer1 = (is_equal_zero(b) || is_equal_zero(value)) ? 0 : value;
     return number_of_roots;
@@ -60,20 +67,24 @@ void clear_buf(int *flag)
     while ((symbol = getchar())!= '\n' && symbol!='\x1a')
         ;
     if(symbol == '\x1a'){
-        *flag = 1;
+       *flag = 1;
     }
 }
 
 int get_coefficients(double *a, double *b, double *c)
 {
     int check = scanf("%lf%lf%lf", a, b, c);
+
     while (check!= EOF && check != 3)
     {
         int flag = 0;
         clear_buf(&flag);
-        if(flag){
+
+        if(flag)
+        {
             break;
         }
+
         printf("it is not a digit! please, try again.\n");
         check = scanf("%lf%lf%lf", a, b, c);
     }
@@ -157,16 +168,20 @@ int get_coefficients(double *a, double *b, double *c)
 int main()
 {
     printf("enter the coefficients separated by spaces:\n");
+
     double a = 0, b = 0, c = 0;
     int number_of_arg = get_coefficients(&a, &b, &c);
+
     if (number_of_arg == 3)
     {
         printf("%lf %lf %lf\n", a, b, c);
+
         double answer1 = 0, answer2 = 0;
         int number_of_roots;
         number_of_roots = solve_quadratic_equation(a, b, c, &answer1, &answer2);
-        assert(&answer1 != NULL);
-        assert(&answer2 != NULL);
+        // test_square( 1, 2, 1, -1, -1)
+        // run_tests()
+
         switch (number_of_roots)
         {
         case NO_ROOTS:
