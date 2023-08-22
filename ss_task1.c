@@ -75,7 +75,7 @@ int get_coefficients(double *a, double *b, double *c)
             {
                 if (number_of_arg < 3)
                 {
-                    printf("the number_buf of arguments is less than 3. please, try again:\n");
+                    printf("the number of arguments is less than 3. please, try again:\n");
                     number_of_arg = 0;
                     index = 0;
                     memset(number_buf, '0', DBL_DIG);
