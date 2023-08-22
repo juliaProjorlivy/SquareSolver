@@ -67,7 +67,7 @@ int solve_quadratic_equation(double a, double b, double c, double *answer1, doub
 void clear_buf(int *flag)
 {
     char symbol = '0';
-    while ((symbol = getchar())!= '\n' && symbol!=EOF)
+    while ((symbol = getchar())!= '\n' && symbol!= EOF)
         ;
     if(symbol == EOF){
        *flag = 1;
@@ -78,7 +78,7 @@ int get_coefficients(double *a, double *b, double *c)
 {
     int check = scanf("%lf%lf%lf", a, b, c);
 
-    while (check!= EOF && check != 3)
+    while (check != 3)
     {
         int flag = 0;
         clear_buf(&flag);
@@ -88,7 +88,7 @@ int get_coefficients(double *a, double *b, double *c)
             break;
         }
 
-        printf("incorrect entrance ! please, try again.\n");
+        printf("incorrect entrance! please, try again.\n");
         check = scanf("%lf%lf%lf", a, b, c);
     }
 
@@ -110,12 +110,18 @@ void test_square(double a, double b, double c, double right_answer1, double righ
 }
 
 void run_tests(){
-
+    int nTests = 5;
+    double coef[nTests][3] = {{5, 10, -15}, {1.8, 9, -0}, {1.55, -6.3, 8}, {0, 1, 0}, {2, 0, -24.5}};
+    double right_answers[nTests][2] = {{-3, 1}, {-5, 0}, {0, 0}, {0, 0}, {-3.5, 3.5}};
+    for(int index = 0; index<nTests; index++){
+        printf("%d ", index+1);
+        test_square(coef[index][0], coef[index][1], coef[index][2], right_answers[index][0], right_answers[index][1]);
+    }
 }
 
 int main()
 {
-    test_square(5, 10, -15, -3, 1);
+    run_tests();
 
     printf("enter the coefficients separated by spaces:\n");
 
@@ -129,8 +135,6 @@ int main()
         double answer1 = 0, answer2 = 0;
         int number_of_roots;
         number_of_roots = solve_quadratic_equation(a, b, c, &answer1, &answer2);
-        // test_square( 1, 2, 1, -1, -1)
-        // run_tests()
 
         switch (number_of_roots)
         {
