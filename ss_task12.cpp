@@ -5,6 +5,8 @@
 #include <float.h>
 #include <math.h>
 #include <assert.h>
+#define RED "\x1b[31;1m"
+#define END_OF_RED "\n\x1b[39;49m"
 
 enum NUMBER_OF_SOLUTIONS
 {
@@ -65,9 +67,9 @@ int solve_quadratic_equation(double a, double b, double c, double *answer1, doub
 void clear_buf(int *flag)
 {
     char symbol = '0';
-    while ((symbol = getchar())!= '\n' && symbol!='\x1a')
+    while ((symbol = getchar())!= '\n' && symbol!=EOF)
         ;
-    if(symbol == '\x1a'){
+    if(symbol == EOF){
        *flag = 1;
     }
 }
@@ -148,7 +150,7 @@ int main()
     }
     else
     {
-        printf("ERROR: unexpected EOF in string");
+        printf(RED "ERROR: unexpected EOF in string" END_OF_RED);
     }
 
     return 0;
