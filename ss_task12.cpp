@@ -14,6 +14,7 @@ enum NUMBER_OF_SOLUTIONS
     INFINITY_SOL = 3
 };
 
+
 int is_equal_zero(double x)
 {
     const double EPSILON = 1e-9;
@@ -85,88 +86,35 @@ int get_coefficients(double *a, double *b, double *c)
             break;
         }
 
-        printf("it is not a digit! please, try again.\n");
+        printf("incorrect entrance ! please, try again.\n");
         check = scanf("%lf%lf%lf", a, b, c);
     }
 
     return check;
 }
 
-// int get_coefficients(double *a, double *b, double *c)
-// {
-//     assert(a != NULL);
-//     assert(b != NULL);
-//     assert(c != NULL);
 
-//     double coefficients[3] = {0, 0, 0};
-//     char number_buf[DBL_DIG] = {'\0'};
-//     char symbol = '0';
-//     int number_of_arg = 0;
-//     int index = 0, nothing_before_digit = 1;
-//     // while(getchar() != '\n')
-//     // scanf
-//     while (((symbol = getchar()) != EOF) && (number_of_arg < 3))
-//     {
-//         if (isdigit(symbol) && nothing_before_digit)
-//         {
-//             number_buf[index] = symbol;
-//             index++;
-//         }
-//         else if ((isspace(symbol)))
-//         {
-//             nothing_before_digit = 1;
-//             if (isdigit(number_buf[index - 1]) || isspace(number_buf[index - 1]))
-//             {
-//                 number_buf[index] = '\0';
-//                 index = 0;
-//                 coefficients[number_of_arg] = atof(number_buf);
-//                 memset(number_buf, '0', DBL_DIG);
-//                 number_of_arg += 1;
-//             }
-//             if (symbol == '\n')
-//             {
-//                 if (number_of_arg < 3)
-//                 {
-//                     printf("the number of arguments is less than 3. please, try again:\n");
-//                     number_of_arg = 0;
-//                     index = 0;
-//                     memset(number_buf, '0', DBL_DIG);
-//                 }
-//                 else
-//                 {
-//                     break;
-//                 }
-//             }
+void test_square(double a, double b, double c, double right_answer1, double right_answer2){
+    double answer1 = 0, answer2 = 0;
+    int number_of_roots = solve_quadratic_equation(a, b, c, &answer1, &answer2);
+    if(((right_answer1 == answer2) || (right_answer1 == answer1)) && ((right_answer2 == answer2) || (right_answer2 == answer1)))
+    {
+        printf("test case successfully passed\n");
+    }
+    else
+    {
+        printf("test case faild\n");
+    }
+}
 
-//             else
-//             {
-//                 index = 0;
-//                 memset(number_buf, '0', DBL_DIG);
-//             }
-//         }
-//         else if (symbol == '-' && index == 0)
-//         {
-//             number_buf[index] = symbol;
-//             index++;
-//         }
-//         else if (symbol == '.' && isdigit(number_buf[index - 1]))
-//         {
-//             number_buf[index] = symbol;
-//             index++;
-//         }
-//         else
-//         {
-//             nothing_before_digit = 0;
-//             index = 0;
-//             memset(number_buf, '0', DBL_DIG);
-//         }
-//     }
-//     *a = coefficients[0], *b = coefficients[1], *c = coefficients[2];
-//     return number_of_arg;
-// }
+void run_tests(){
+
+}
 
 int main()
 {
+    test_square(5, 10, -15, -3, 1);
+
     printf("enter the coefficients separated by spaces:\n");
 
     double a = 0, b = 0, c = 0;
