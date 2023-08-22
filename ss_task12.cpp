@@ -54,10 +54,14 @@ int solve_quadratic_equation(double a, double b, double c, double *answer1, doub
     }
 }
 
-void clear_buf()
+void clear_buf(int *flag)
 {
-    while (getchar()!= '\n')
+    char symbol = '0';
+    while ((symbol = getchar())!= '\n' && symbol!='\x1a')
         ;
+    if(symbol == '\x1a'){
+        *flag = 1;
+    }
 }
 
 int get_coefficients(double *a, double *b, double *c)
@@ -66,7 +70,10 @@ int get_coefficients(double *a, double *b, double *c)
     while (check!= EOF && check != 3)
     {
         int flag = 0;
-        clear_buf();
+        clear_buf(&flag);
+        if(flag){
+            break;
+        }
         printf("it is not a digit! please, try again.\n");
         check = scanf("%lf%lf%lf", a, b, c);
     }
