@@ -2,13 +2,12 @@
 #include <assert.h>
 #include <math.h>
 
-
-int is_equal(double x, double y)//change less/more
+int is_equal(double x, double y, double epsilon)
 {
     assert(isfinite(x));
-
-    const double EPSILON = 1e-9;
-    return (fabs(x - y) < EPSILON);
+    assert(isfinite(y));
+    
+    return (fabs(x - y) < epsilon);
     
 }
 

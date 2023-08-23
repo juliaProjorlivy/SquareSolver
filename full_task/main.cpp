@@ -44,6 +44,8 @@ int main(int argc, char *argv[])
         case INFINITY_SOL:
             printf("infinite number of roots\n");
             break;
+        default:
+            printf("something went wrong\n");
         }
     }
     else
