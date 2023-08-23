@@ -1,7 +1,11 @@
 #include "main.h"
 #include "input.h"
 #include "solve_quadratic_eq.h"
+
+#ifdef RUN_TESTS
 #include "test.h"
+#endif
+
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
@@ -9,15 +13,17 @@
 #define RED "\x1b[31;1m"
 #define END_OF_RED "\n\x1b[39;49m"
 
-
 int main(int argc, char *argv[])
 {
+    #ifdef RUN_TESTS
     if(argc == 2){
         if(!strcmp(argv[1], "--UnitTest")){
             run_tests();
         }
-    }
+    }   
+    #endif
 
+    #ifndef RUN_TESTS
     printf("enter the coefficients separated by spaces:\n");
 
     double a = 0, b = 0, c = 0;
@@ -52,6 +58,7 @@ int main(int argc, char *argv[])
     {
         printf(RED "ERROR: unexpected EOF in string" END_OF_RED);
     }
+    #endif
 
     return 0;
 }

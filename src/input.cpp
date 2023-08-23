@@ -5,7 +5,7 @@
 
 void clear_buf(int *is_eof)
 {
-    char symbol = '0';
+    int symbol = 0;
     while ((symbol = getchar())!= '\n' && symbol!= EOF)
         ;
     if(symbol == EOF){
@@ -18,7 +18,7 @@ int get_coefficients(double *a, double *b, double *c)
     assert(a!=NULL);
     assert(b!=NULL);
     assert(c!=NULL);
-    
+
     int nCoef = 3;
     int check = scanf("%lf%lf%lf", a, b, c);
     int is_eof = 0;
