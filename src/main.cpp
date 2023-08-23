@@ -15,13 +15,13 @@
 
 int main(int argc, char *argv[])
 {
-    #ifdef RUN_TESTS
     if(argc == 2){
         if(!strcmp(argv[1], "--UnitTest")){
+            #ifdef RUN_TESTS
             run_tests();
+            #endif
         }
     }   
-    #endif
 
     #ifndef RUN_TESTS
     printf("enter the coefficients separated by spaces:\n");
