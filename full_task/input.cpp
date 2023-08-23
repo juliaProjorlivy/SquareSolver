@@ -1,4 +1,6 @@
 #include "input.h"
+#include <assert.h>
+#include <math.h>
 #include <stdio.h>
 
 void clear_buf(int *is_eof)
@@ -13,6 +15,14 @@ void clear_buf(int *is_eof)
 
 int get_coefficients(double *a, double *b, double *c)
 {
+    assert(a!=NULL);
+    assert(b!=NULL);
+    assert(c!=NULL);
+
+    assert(isfinite(*a));
+    assert(isfinite(*b));
+    assert(isfinite(*c));
+
     int nCoef = 3;
     int check = scanf("%lf%lf%lf", a, b, c);
     int is_eof = 0;

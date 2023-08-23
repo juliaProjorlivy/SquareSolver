@@ -1,50 +1,57 @@
 #include "solve_quadratic_eq.h"
+#include <assert.h>
 #include <math.h>
 
-enum NUMBER_OF_SOLUTIONS
-{
-    NO_ROOTS = 0,
-    ONE_ROOT = 1,
-    TWO_ROOTS = 2,
-    INFINITY_SOL = 3
-};
 
-int is_equal_zero(double x)
+int is_equal(double x, double y)//change less/more
 {
+    assert(isfinite(x));
+
     const double EPSILON = 1e-9;
-    return (fabs(x) < EPSILON);
+    return (fabs(x - y) < EPSILON);
     
 }
 
 int solve_linear(double b, double c, double *answer1, int number_of_roots)
 {
+    assert(isfinite(b));
+    assert(isfinite(c));
+    assert(isfinite(number_of_roots));
+    assert(answer1!=NULL);
+
     double value = 0;
-    if(!is_equal_zero(b))
+    if(!is_equal(b, 0))
     {
         value = (-1) * c / b;
         number_of_roots =  ONE_ROOT;
     }
     else
     {
-        number_of_roots = is_equal_zero(c) ? INFINITY_SOL : NO_ROOTS;
+        number_of_roots = is_equal(c, 0) ? INFINITY_SOL : NO_ROOTS;
     }
-    *answer1 = (is_equal_zero(b) || is_equal_zero(value)) ? 0 : value;
+    *answer1 = (is_equal(b, 0) || is_equal(value, 0)) ? 0 : value;
     return number_of_roots;
 }
 
 int solve_quadratic_equation(double a, double b, double c, double *answer1, double *answer2)
 {
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(c));
+    assert(answer1!=NULL);
+    assert(answer2!=NULL);
+
     int number_of_roots = 0;
     double d = b * b - 4 * a * c;
     if (d<0)
     {
         return 0;
     }
-    if (is_equal_zero(a))
+    if (is_equal(a, 0))
     {
         return (solve_linear(b, c, answer1, number_of_roots));
     }
-    if (is_equal_zero(d))
+    if (is_equal(d, 0))
     {
         *answer1 = ((-1) * b / (2 * a));
         return 1;

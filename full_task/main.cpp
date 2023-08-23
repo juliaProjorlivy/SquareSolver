@@ -32,16 +32,16 @@ int main(int argc, char *argv[])
 
         switch (number_of_roots)
         {
-        case 0:
+        case NO_ROOTS:
             printf("no roots\n");
             break;
-        case 1:
+        case ONE_ROOT:
             printf("the root is:\nx = %lf\n", answer1);
             break;
-        case 2:
+        case TWO_ROOTS:
             printf("the roots are:\nx1 = %lf\nx2 = %lf\n", answer1, answer2);
             break;
-        case 3:
+        case INFINITY_SOL:
             printf("infinite number of roots\n");
             break;
         }
