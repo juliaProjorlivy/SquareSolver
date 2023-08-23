@@ -12,13 +12,11 @@
 
 int main(int argc, char *argv[])
 {
-    // if(argc == 2){
-    //     if(!strcmp(argv[1], "--UnitTest")){
-    //         run_tests();
-    //     }
-    // }
-
-    run_tests();
+    if(argc == 2){
+        if(!strcmp(argv[1], "--UnitTest")){
+            run_tests();
+        }
+    }
 
     printf("enter the coefficients separated by spaces:\n");
 
