@@ -1,0 +1,54 @@
+\doxysection{src/input.cpp File Reference}
+\hypertarget{input_8cpp}{}\label{input_8cpp}\index{src/input.cpp@{src/input.cpp}}
+{\ttfamily \#include \"{}input.\+h\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{input_8cpp_a6f32e21adff1363abf5a80ba3dfb4ace}{clear\+\_\+buf}} (int \texorpdfstring{$\ast$}{*}is\+\_\+eof)
+\begin{DoxyCompactList}\small\item\em Clears the input buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{input_8cpp_a2ae675730e3fbce8a8e9d5d4feba6b8e}{get\+\_\+coefficients}} (double \texorpdfstring{$\ast$}{*}a, double \texorpdfstring{$\ast$}{*}b, double \texorpdfstring{$\ast$}{*}c)
+\begin{DoxyCompactList}\small\item\em Reads input data and in case of an incorrect input asks user to type again. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{input_8cpp_a6f32e21adff1363abf5a80ba3dfb4ace}\label{input_8cpp_a6f32e21adff1363abf5a80ba3dfb4ace} 
+\index{input.cpp@{input.cpp}!clear\_buf@{clear\_buf}}
+\index{clear\_buf@{clear\_buf}!input.cpp@{input.cpp}}
+\doxysubsubsection{\texorpdfstring{clear\_buf()}{clear\_buf()}}
+{\footnotesize\ttfamily void clear\+\_\+buf (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{is\+\_\+eof }\end{DoxyParamCaption})}
+
+
+
+Clears the input buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+\_\+eof} & indicate the EOF ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{input_8cpp_a2ae675730e3fbce8a8e9d5d4feba6b8e}\label{input_8cpp_a2ae675730e3fbce8a8e9d5d4feba6b8e} 
+\index{input.cpp@{input.cpp}!get\_coefficients@{get\_coefficients}}
+\index{get\_coefficients@{get\_coefficients}!input.cpp@{input.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_coefficients()}{get\_coefficients()}}
+{\footnotesize\ttfamily int get\+\_\+coefficients (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{a,  }\item[{double \texorpdfstring{$\ast$}{*}}]{b,  }\item[{double \texorpdfstring{$\ast$}{*}}]{c }\end{DoxyParamCaption})}
+
+
+
+Reads input data and in case of an incorrect input asks user to type again. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em a} & quadratic coefficient before x\texorpdfstring{$^\wedge$}{\string^}2 \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em b} & quadratic coefficient before x \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em c} & free term of quadratic equation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of parametrs that were read 
+\end{DoxyReturn}

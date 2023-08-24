@@ -1,0 +1,83 @@
+\doxysection{src/solve\+\_\+quadratic\+\_\+eq.cpp File Reference}
+\hypertarget{solve__quadratic__eq_8cpp}{}\label{solve__quadratic__eq_8cpp}\index{src/solve\_quadratic\_eq.cpp@{src/solve\_quadratic\_eq.cpp}}
+{\ttfamily \#include \"{}solve\+\_\+quadratic\+\_\+eq.\+h\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{solve__quadratic__eq_8cpp_a7dbfa00a16d98cc3c3416420f25b9553}{is\+\_\+equal}} (double x, double y, double epsilon)
+\begin{DoxyCompactList}\small\item\em compare two numbers up to epsilon \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{solve__quadratic__eq_8cpp_a70848b1895685cc6cde9035602ac5a13}{solve\+\_\+linear}} (double b, double c, double \texorpdfstring{$\ast$}{*}answer1, int number\+\_\+of\+\_\+roots)
+\begin{DoxyCompactList}\small\item\em solve the linear equation \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{solve__quadratic__eq_8cpp_a538c5f65528a4ab653351fdad2a42ee9}{solve\+\_\+quadratic\+\_\+equation}} (double a, double b, double c, double \texorpdfstring{$\ast$}{*}answer1, double \texorpdfstring{$\ast$}{*}answer2)
+\begin{DoxyCompactList}\small\item\em solve the quadratic equation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{solve__quadratic__eq_8cpp_a7dbfa00a16d98cc3c3416420f25b9553}\label{solve__quadratic__eq_8cpp_a7dbfa00a16d98cc3c3416420f25b9553} 
+\index{solve\_quadratic\_eq.cpp@{solve\_quadratic\_eq.cpp}!is\_equal@{is\_equal}}
+\index{is\_equal@{is\_equal}!solve\_quadratic\_eq.cpp@{solve\_quadratic\_eq.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_equal()}{is\_equal()}}
+{\footnotesize\ttfamily int is\+\_\+equal (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{epsilon }\end{DoxyParamCaption})}
+
+
+
+compare two numbers up to epsilon 
+
+
+\begin{DoxyParams}{Parameters}
+{\em epsilon} & the precision number which by defualt equals EPSILON = 1e-\/9 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if two numbers are equal and 0 if not 
+\end{DoxyReturn}
+\Hypertarget{solve__quadratic__eq_8cpp_a70848b1895685cc6cde9035602ac5a13}\label{solve__quadratic__eq_8cpp_a70848b1895685cc6cde9035602ac5a13} 
+\index{solve\_quadratic\_eq.cpp@{solve\_quadratic\_eq.cpp}!solve\_linear@{solve\_linear}}
+\index{solve\_linear@{solve\_linear}!solve\_quadratic\_eq.cpp@{solve\_quadratic\_eq.cpp}}
+\doxysubsubsection{\texorpdfstring{solve\_linear()}{solve\_linear()}}
+{\footnotesize\ttfamily int solve\+\_\+linear (\begin{DoxyParamCaption}\item[{double}]{b,  }\item[{double}]{c,  }\item[{double \texorpdfstring{$\ast$}{*}}]{answer1,  }\item[{int}]{number\+\_\+of\+\_\+roots }\end{DoxyParamCaption})}
+
+
+
+solve the linear equation 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em b} & coefficient before x \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & free term of linear equation \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em answer1} & linear equation root \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of linear equation roots 
+\end{DoxyReturn}
+\Hypertarget{solve__quadratic__eq_8cpp_a538c5f65528a4ab653351fdad2a42ee9}\label{solve__quadratic__eq_8cpp_a538c5f65528a4ab653351fdad2a42ee9} 
+\index{solve\_quadratic\_eq.cpp@{solve\_quadratic\_eq.cpp}!solve\_quadratic\_equation@{solve\_quadratic\_equation}}
+\index{solve\_quadratic\_equation@{solve\_quadratic\_equation}!solve\_quadratic\_eq.cpp@{solve\_quadratic\_eq.cpp}}
+\doxysubsubsection{\texorpdfstring{solve\_quadratic\_equation()}{solve\_quadratic\_equation()}}
+{\footnotesize\ttfamily int solve\+\_\+quadratic\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double \texorpdfstring{$\ast$}{*}}]{answer1,  }\item[{double \texorpdfstring{$\ast$}{*}}]{answer2 }\end{DoxyParamCaption})}
+
+
+
+solve the quadratic equation 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & quadratic coefficient before x\texorpdfstring{$^\wedge$}{\string^}2 \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & quadratic coefficient before x \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & free term of quadratic equation \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em answer1} & one of quadratic roots \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em answer1} & one of quadratic roots \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of quadratic equation roots 
+\end{DoxyReturn}

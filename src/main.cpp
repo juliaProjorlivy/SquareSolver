@@ -1,7 +1,24 @@
-#include "main.h"
+/*
+ * ============================================================================
+ *
+ *       Filename:  main.cpp
+ *
+ *    Description:  The main file of the project
+ *
+ *        Created:  24/08/2023 
+ *       Compiler:  g++
+ * 
+ * ============================================================================
+ */
+
+
+
 #include "input.h"
 #include "solve_quadratic_eq.h"
 
+/** 
+* include file in case of running the tests
+*/
 #ifdef RUN_TESTS
 #include "test.h"
 #endif
@@ -10,24 +27,28 @@
 #include <string.h>
 #include <math.h>
 
-#define RED "\x1b[31;1m"
-#define END_OF_RED "\n\x1b[39;49m"
+#define RED "\x1b[31;1m"  /**< paint command line text red */  
+#define END_OF_RED "\n\x1b[39;49m"  /**< paint command line text green */  
 
 int main(int argc, char *argv[])
 {
+    /** 
+     * run tests
+     */
+    #ifdef RUN_TESTS
     if(argc == 2){
         if(!strcmp(argv[1], "--UnitTest")){
-            #ifdef RUN_TESTS
             run_tests();
-            #endif
         }
-    }   
-
-    #ifndef RUN_TESTS
+    }  
+    #endif // RUN_TESTS
+    
+    (void) argc;
+    (void) argv;
     printf("enter the coefficients separated by spaces:\n");
 
     double a = 0, b = 0, c = 0;
-    int number_of_arg = get_coefficients(&a, &b, &c);
+    int number_of_arg = get_coefficients(&a, &b, &c); ///get the number of coefficients that are successuffully read
 
     if (number_of_arg == 3)
     {
@@ -36,7 +57,7 @@ int main(int argc, char *argv[])
         double answer1 = 0, answer2 = 0;
         int number_of_roots = solve_quadratic_equation(a, b, c, &answer1, &answer2);
 
-        switch (number_of_roots)
+        switch (number_of_roots) /*various numbers of solutions to a quadtratic equation*/
         {
         case NO_ROOTS:
             printf("no roots\n");
@@ -51,14 +72,13 @@ int main(int argc, char *argv[])
             printf("infinite number of roots\n");
             break;
         default:
-            printf("something went wrong\n");
+            printf("unexpected number of solutions:%d\n", number_of_roots);
         }
     }
     else
     {
         printf(RED "ERROR: unexpected EOF in string" END_OF_RED);
     }
-    #endif
 
     return 0;
 }

@@ -1,0 +1,38 @@
+\doxysection{solve\+\_\+quadratic\+\_\+eq.\+h}
+\hypertarget{solve__quadratic__eq_8h_source}{}\label{solve__quadratic__eq_8h_source}\index{include/solve\_quadratic\_eq.h@{include/solve\_quadratic\_eq.h}}
+\mbox{\hyperlink{solve__quadratic__eq_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \ \textcolor{comment}{/*\ ============================================================================}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ \ Filename:\ \ solve\_quadratic\_eq.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ Description:\ \ Header\ file\ of\ the\ quadtratid\ equation\ function}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ Created:\ \ 24/03/2023}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ \ Compiler:\ \ g++}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ ============================================================================}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ SOLVE\_QUADRATIC\_EQ\_INCLUDED}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ SOLVE\_QUADRATIC\_EQ\_INCLUDED}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a37f80f87b0223988379069998f2b1aca}{DEF\_EPSILON}}\ =\ 1e-\/9;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56}{NUMBER\_OF\_SOLUTIONS}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56ab9a321da349ac1355b717745736ad90c}{NO\_ROOTS}}\ =\ 0,}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56a6700c0f6efd23571cb22aefd2510b1cf}{ONE\_ROOT}}\ =\ 1,}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56a876622d3c0b008da13a3685c64714e81}{TWO\_ROOTS}}\ =\ 2,}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56aff8f000f17437d1a3b73b28b746b9bb9}{INFINITY\_SOL}}\ =\ 3}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a6bb85104817dc6c298e57ae4a3b2b21f}{is\_equal}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ epsilon\ =\ \mbox{\hyperlink{solve__quadratic__eq_8h_a37f80f87b0223988379069998f2b1aca}{DEF\_EPSILON}});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a70848b1895685cc6cde9035602ac5a13}{solve\_linear}}(\textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c,\ \textcolor{keywordtype}{double}\ *answer1,\ \textcolor{keywordtype}{int}\ number\_of\_roots);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a538c5f65528a4ab653351fdad2a42ee9}{solve\_quadratic\_equation}}(\textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c,\ \textcolor{keywordtype}{double}\ *answer1,\ \textcolor{keywordtype}{double}\ *answer2);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,8 +1,26 @@
+/*
+ * ============================================================================
+ *
+ *       Filename:  input.cpp
+ *
+ *    Description:  Reads input
+ *
+ *        Created:  24/08/2023 
+ *       Compiler:  g++
+ * 
+ * ============================================================================
+ */
+
+
 #include "input.h"
 #include <assert.h>
 #include <math.h>
 #include <stdio.h>
 
+/*!
+	\brief Clears the input buffer
+    \param is_eof indicate the EOF    
+*/
 void clear_buf(int *is_eof)
 {
     int symbol = 0;
@@ -13,6 +31,15 @@ void clear_buf(int *is_eof)
     }
 }
 
+
+/*!
+	\brief Reads input data and in case of an incorrect input asks user to type again
+    \param[inout] a quadratic coefficient before x^2
+    \param[inout] b quadratic coefficient before x
+    \param[inout] c free term of quadratic equation
+    \return the number of parametrs that were read
+    
+*/
 int get_coefficients(double *a, double *b, double *c)
 {
     assert(a!=NULL);
@@ -31,3 +58,4 @@ int get_coefficients(double *a, double *b, double *c)
 
     return check;
 }
+

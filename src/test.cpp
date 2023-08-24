@@ -1,3 +1,17 @@
+/*
+ * ============================================================================
+ *
+ *       Filename:  test.cpp
+ *
+ *    Description:  Run tests
+ *
+ *        Created:  24/08/2023 
+ *       Compiler:  g++
+ * 
+ * ============================================================================
+ */
+
+
 #include "solve_quadratic_eq.h"
 #include "test.h"
 #include <assert.h>
@@ -5,19 +19,32 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define GREEN "\033[92m"
-#define END_COLOR "\x1b[39;49m"
-#define RED "\033[91m"
+#define GREEN "\033[92m"    /**< paint command line text green */  
+#define END_COLOR "\x1b[39;49m" /**< paint command line text default color */
+#define RED "\033[91m" /**< paint command line text red */
 
+
+/*!
+
+	\brief  data template for tests
+    
+*/
 struct test{
     double abc[3];
     double answersRef[2];
     int nRootsRef;
 };
 
+
+/*!
+	\brief test sovle_quadratic_equation function 
+    \param[inout] data the test structure 
+    \return 1 test passed successfully and 0 if not
+    
+*/
 static int test_square(const test *data, int index){
     int success = 0;
-    const double EPSILON2 = 1e-5;
+    const double EPSILON2 = 1e-5; /**< the equivalent number */ 
     double answer1 = 0, answer2 = 0;
     int nRoots = solve_quadratic_equation(data->abc[0], data->abc[1], data->abc[2], &answer1, &answer2);
 
@@ -37,6 +64,9 @@ static int test_square(const test *data, int index){
 }
 
 
+/**
+ * Test runner function
+ */
 void run_tests()
 {
 //                    a   b    c    x1  x2  nRoots
