@@ -19,6 +19,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+#include <stdlib.h>
+
 #define GREEN "\033[92m"    /**< paint command line text green */  
 #define END_COLOR "\x1b[39;49m" /**< paint command line text default color */
 #define RED "\033[91m" /**< paint command line text red */
@@ -67,16 +69,39 @@ static int test_square(const test *data, int index){
 /**
  * Test runner function
  */
+// void run_tests()
+// {
+// //                    a   b    c    x1  x2  nRoots
+//     test tests[] = {{{5, 10, -15}, {1, -3}, 2}, 
+//                     {{0,  0,   0}, {0,  0}, 3}, 
+//                     {{1.3, 1.54, -15}, {2.85578, -4.04039}, 2}, 
+//                     {{0, 1, 0}, {0, 0}, 1}, 
+//                     {{1.9, -2.1, -6}, {2.41362, -1.30836}, 2}};
+//     size_t length = sizeof(tests)/sizeof(tests[0]);
+//     for(int index = 0; index < (int)length; index++){
+//         test_square(&tests[index], index+1);
+//     }
+// }
+
+
 void run_tests()
 {
-//                    a   b    c    x1  x2  nRoots
-    test tests[] = {{{5, 10, -15}, {1, -3}, 2}, 
-                    {{0,  0,   0}, {0,  0}, 3}, 
-                    {{1.3, 1.54, -15}, {2.85578, -4.04039}, 2}, 
-                    {{0, 1, 0}, {0, 0}, 1}, 
-                    {{1.9, -2.1, -6}, {2.41362, -1.30836}, 2}};
-    size_t length = sizeof(tests)/sizeof(tests[0]);
-    for(int index = 0; index < (int)length; index++){
-        test_square(&tests[index], index+1);
+    const int nTests = 4;
+    test *tests = (test *)malloc(sizeof(test)*nTests);
+
+    FILE *file = fopen("data_tests.txt", "r");
+
+    int index = 0;
+    while((fscanf(file, "%lf%lf%lf%lf%lf%d", &(tests[index].abc[0]), &(tests[index].abc[1]), &(tests[index].abc[2]),
+     &(tests[index].answersRef[0]), &(tests[index].answersRef[1]), &(tests[index].nRootsRef))) == 6){
+        index++;
+        if(index>nTests){
+            break;
+        }
+        
+    }
+    
+    for(int i = 0; i < nTests; i++){
+        test_square(&tests[i], i+1);
     }
 }
