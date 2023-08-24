@@ -28,7 +28,7 @@
 #include <math.h>
 
 #define RED "\x1b[31;1m"  /**< paint command line text red */  
-#define END_OF_RED "\n\x1b[39;49m"  /**< paint command line text green */  
+#define END_OF_RED "\n\x1b[39;49m"  /**< paint command line default color */  
 
 int main(int argc, char *argv[])
 {
