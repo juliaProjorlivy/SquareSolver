@@ -11,7 +11,6 @@
  * ============================================================================
  */
 
-
 #include "input.h"
 #include <assert.h>
 #include <math.h>
@@ -21,16 +20,12 @@
 	\brief Clears the input buffer
     \param is_eof indicate the EOF    
 */
-void clear_buf(int *is_eof)
+void clear_buf()
 {
     int symbol = 0;
-    while ((symbol = getchar())!= '\n' && symbol!= EOF)
+    while ((symbol = getchar()) != '\n' && symbol != EOF)
         ;
-    if(symbol == EOF){
-       *is_eof = 1;
-    }
 }
-
 
 /*!
 	\brief Reads input data and in case of an incorrect input asks user to type again
@@ -40,22 +35,21 @@ void clear_buf(int *is_eof)
     \return the number of parametrs that were read
     
 */
-int get_coefficients(double *a, double *b, double *c)
+int get_coefficients (double *a, double *b, double *c)
 {
-    assert(a!=NULL);
-    assert(b!=NULL);
-    assert(c!=NULL);
+    assert (a != NULL);
+    assert (b != NULL);
+    assert (c != NULL);
 
     int nCoef = 3;
-    int check = scanf("%lf%lf%lf", a, b, c);
-    int is_eof = 0;
-    while (check != nCoef && check!=EOF)
+    int check = scanf ("%lf %lf %lf", a, b, c);
+
+    while (check != nCoef && check != EOF)
     {
-        clear_buf(&is_eof);
-        printf("incorrect input! please, try again.\n");
-        check = scanf("%lf%lf%lf", a, b, c);
+        clear_buf();
+        printf ("incorrect input! please, try again.\n");
+        check = scanf ("%lf %lf %lf", a, b, c);
     }
 
     return check;
 }
-

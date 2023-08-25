@@ -15,18 +15,15 @@
 #include "verror.h"
 
 /*!
-
 	\brief Print the error description, file and line where an error happened.
-
-    
 */
-
-void verror(const char *description, ...) {
-    fprintf(stderr, "ERROR: ");
+void verror (const char *description, ...) 
+{
+    fprintf (stderr, "ERROR: ");
     
     va_list args;
-    va_start(args, description);
-    vfprintf(stderr, description, args);
+    va_start (args, description);
+    vfprintf (stderr, description, args);
 
-    fprintf(stderr, END_OF_RED);
+    fprintf (stderr, END_OF_COLOR);
 }
