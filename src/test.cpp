@@ -11,7 +11,7 @@
  * ============================================================================
  */
 
-
+#include "verror.h"
 #include "solve_quadratic_eq.h"
 #include "test.h"
 #include <assert.h>
@@ -23,10 +23,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#define GREEN "\033[92m"    /**< paint command line text green */  
-#define END_COLOR "\x1b[39;49m" /**< paint command line text default color */
-#define RED "\033[91m" /**< paint command line text red */
-
 
 /*!
 
@@ -34,9 +30,9 @@
     
 */
 struct test{
-    double abc[3];
-    double answersRef[2];
-    int nRootsRef;
+    double abc[3]; //! quadratic equation coefficients
+    double answersRef[2]; //! solution to the quadratic equation
+    int nRootsRef; //! the number of roots of quadratic equation
 };
 
 
@@ -69,50 +65,49 @@ static int test_square(const test *data){
 
 
 /**
- * Test runner function
+ * Run default tests
  */
-// void run_tests()
-// {
-// //                    a   b    c    x1  x2  nRoots
-//     test tests[] = {{{5, 10, -15}, {1, -3}, 2}, 
-//                     {{0,  0,   0}, {0,  0}, 3}, 
-//                     {{1.3, 1.54, -15}, {2.85578, -4.04039}, 2}, 
-//                     {{0, 1, 0}, {0, 0}, 1}, 
-//                     {{1.9, -2.1, -6}, {2.41362, -1.30836}, 2}};
-//     size_t length = sizeof(tests)/sizeof(tests[0]);
-//     for(int index = 0; index < (int)length; index++){
-//         test_square(&tests[index], index+1);
-//     }
-// }
+void run_default_tests()
+{
+//                    a   b    c    x1  x2  nRoots
+    test tests[] = {{{5, 10, -15}, {1, -3}, 2}, 
+                    {{0,  0,   0}, {0,  0}, 3}, 
+                    {{1.3, 1.54, -15}, {2.85578, -4.04039}, 2}, 
+                    {{0, 1, 0}, {0, 0}, 1}, 
+                    {{1.9, -2.1, -6}, {2.41362, -1.30836}, 2}};
+
+    size_t length = sizeof(tests)/sizeof(tests[0]);
+
+    for(int index = 0; index < (int)length; index++){
+        test_square(tests + index);
+    }
+}
 
 
-void run_tests()
+/**
+ * Run tests from the file. Takes the file name.
+ * \param[in] file_name the name of the file
+ */
+int run_tests(const char *file_name)
 {
     test test_data = {};
-//     struct stat filestat = {};
-//     stat("data_tests.txt", &filestat);
 
-//     char *tests = (char *)calloc(filestat.st_size, sizeof(char));
+    FILE *file = fopen(file_name, "r");
+    if(file == NULL){
 
-    FILE *file = fopen("data_tests.txt", "r");
+        VERROR("ERROR: file cannot be opened\n");
+        return TEST_FAILURE;
+    }
 
-//     if(fread(tests, sizeof(char), filestat.st_size, file) != filestat.st_size){
-//         printf("error\n");
-//     } 
-// // stat(file) -> calloc
-// // file -> buff
-// // sscanf(buff) -> struct test
-// // test(struct test)
-
-
-    while((fscanf(file, "%lf %lf %lf %lf %lf %d", test_data.abc, test_data.abc + 1, 
-            test_data.abc + 2, test_data.answersRef, test_data.answersRef + 1, 
-            &(test_data.nRootsRef)) == 6)){
+    while((fscanf(file, "%lf %lf %lf %lf %lf %d", 
+        test_data.abc, test_data.abc + 1, test_data.abc + 2, 
+        test_data.answersRef, test_data.answersRef + 1, 
+        &(test_data.nRootsRef)) == 6)){
             
             test_square(&test_data);
         }
     
 
     fclose(file);
-
+    return TEST_SUCCESS;
 }
