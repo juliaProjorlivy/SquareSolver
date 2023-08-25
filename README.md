@@ -35,17 +35,14 @@ Example:
     ///successfull launch
     $ make tests
     $ ./testing.exe --UnitTest
-<span style="color:green">
     test case passed successully
-</span>
+
 
 
     ///failed launch
     $ make tests
     $ ./testing.exe --UnitTest
-<span style="color:red">
     test case failed
-</span>
     x1 = 0.000000; x2 = 0.000000; nRoots = 0
     expected:
     x1 = 0.000000; x2 = 6.000000; nRoots = 0
