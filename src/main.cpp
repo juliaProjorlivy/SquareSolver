@@ -12,7 +12,7 @@
  */
 
 
-
+#include "verror.h"
 #include "input.h"
 #include "solve_quadratic_eq.h"
 
@@ -27,20 +27,26 @@
 #include <string.h>
 #include <math.h>
 
-#define RED "\x1b[31;1m"  /**< paint command line text red */  
-#define END_OF_RED "\n\x1b[39;49m"  /**< paint command line default color */  
-
 int main(int argc, char *argv[])
 {
     /** 
      * run tests
      */
     #ifdef RUN_TESTS
-    if(argc == 2){
+    if(argc >= 2){
         if(!strcmp(argv[1], "--UnitTest")){
-            run_tests();
+            if(argc == 2){
+                run_default_tests();
+            }
+            else{
+                const char *file_name = argv[2];
+                if(run_tests(file_name)){
+                    return TEST_FAILURE;
+                };
+            }
         }
     }  
+
     #endif // RUN_TESTS
     
     (void) argc;
@@ -73,12 +79,12 @@ int main(int argc, char *argv[])
             printf("infinite number of roots\n");
             break;
         default:
-            fprintf(stderr, RED "unexpected number of solutions:%d\n" END_OF_RED, number_of_roots);
+            VERROR("unexpected number of solutions:%d", number_of_roots);
         }
     }
     else
     {
-        fprintf(stderr, RED "ERROR: unexpected EOF in string" END_OF_RED);
+        VERROR("unexpected EOF in string");
     }
     #endif
     return 0;
