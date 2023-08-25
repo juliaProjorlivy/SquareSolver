@@ -99,11 +99,12 @@ void run_tests()
 
         index++;
 
-        if(index>nTests){
+        if(index>=nTests){
             break;
         }
         
     }
+    fclose(file);
     
     for(int i = 0; i < nTests; i++){
         test_square(&tests[i], i+1);
