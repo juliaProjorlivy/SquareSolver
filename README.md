@@ -3,7 +3,7 @@
 Solves quadratic equation. Takes coifficients and returns the solution to the equation. Outputs to stdout.
 
 ## Installation
-To compile 
+To compile:
 ```
 $ make
 ```
