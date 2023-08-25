@@ -5,7 +5,7 @@ SRCS = src/input.cpp src/main.cpp src/solve_quadratic_eq.cpp
 
 
 all:
-	@$(CXX) $(CXX_FLAGS) $(SRCS) -o build.exe
+	@$(CXX) $(CXX_FLAGS) $(SRCS) -o solve_square.exe
 
 tests: $(SRCS)
 	@$(CXX) -DRUN_TESTS $(CXX_FLAGS) $(SRCS) src/test.cpp -o testing.exe
