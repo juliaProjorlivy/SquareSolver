@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
     
     (void) argc;
     (void) argv;
+    #ifndef RUN_TESTS
     printf("enter the coefficients separated by spaces:\n");
 
     double a = 0, b = 0, c = 0;
@@ -79,6 +80,6 @@ int main(int argc, char *argv[])
     {
         printf(RED "ERROR: unexpected EOF in string" END_OF_RED);
     }
-
+    #endif
     return 0;
 }

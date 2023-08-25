@@ -87,14 +87,18 @@ static int test_square(const test *data, int index){
 void run_tests()
 {
     const int nTests = 4;
-    test *tests = (test *)malloc(sizeof(test)*nTests);
+    
+    test tests[nTests] = {{{0, 0, 0}, {0, 0}, 0}};
 
     FILE *file = fopen("data_tests.txt", "r");
 
     int index = 0;
-    while((fscanf(file, "%lf%lf%lf%lf%lf%d", &(tests[index].abc[0]), &(tests[index].abc[1]), &(tests[index].abc[2]),
-     &(tests[index].answersRef[0]), &(tests[index].answersRef[1]), &(tests[index].nRootsRef))) == 6){
+    while((fscanf(file, "%lf%lf%lf%lf%lf%d", &(tests[index].abc[0]), &(tests[index].abc[1]), 
+            &(tests[index].abc[2]),&(tests[index].answersRef[0]), &(tests[index].answersRef[1]), 
+            &(tests[index].nRootsRef))) == 6){
+
         index++;
+
         if(index>nTests){
             break;
         }
