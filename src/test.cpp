@@ -18,7 +18,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 #include <stdlib.h>
 
 #define GREEN "\033[92m"    /**< paint command line text green */  
@@ -44,7 +46,7 @@ struct test{
     \return 1 test passed successfully and 0 if not
     
 */
-static int test_square(const test *data, int index){
+static int test_square(const test *data){
     int success = 0;
     const double EPSILON2 = 1e-5; /**< the equivalent number */ 
     double answer1 = 0, answer2 = 0;
@@ -52,7 +54,7 @@ static int test_square(const test *data, int index){
 
     if(!is_equal(answer1, data->answersRef[0], EPSILON2) || !is_equal(answer2, data->answersRef[1], EPSILON2) || nRoots!=(data->nRootsRef))
     {
-        printf(RED "%d test case failed:\n" END_COLOR, index);
+        printf(RED "test case failed:\n" END_COLOR);
         printf("x1 = %lf; x2 = %lf; nRoots = %d\n"
                 "expected:\nx1 = %lf; x2 = %lf; nRoots = %d\n ", answer1, answer2,
                 nRoots, data->answersRef[0], data->answersRef[1], data->nRootsRef);
@@ -60,7 +62,7 @@ static int test_square(const test *data, int index){
     else
     {
         success = 1;
-        printf(GREEN "%d test case passed successully\n" END_COLOR, index);
+        printf(GREEN "test case passed successully\n" END_COLOR);
     }
     return success;
 }
@@ -86,27 +88,31 @@ static int test_square(const test *data, int index){
 
 void run_tests()
 {
-    const int nTests = 4;
-    
-    test tests[nTests] = {{{0, 0, 0}, {0, 0}, 0}};
+    test test_data = {};
+//     struct stat filestat = {};
+//     stat("data_tests.txt", &filestat);
+
+//     char *tests = (char *)calloc(filestat.st_size, sizeof(char));
 
     FILE *file = fopen("data_tests.txt", "r");
 
-    int index = 0;
-    while((fscanf(file, "%lf%lf%lf%lf%lf%d", &(tests[index].abc[0]), &(tests[index].abc[1]), 
-            &(tests[index].abc[2]),&(tests[index].answersRef[0]), &(tests[index].answersRef[1]), 
-            &(tests[index].nRootsRef))) == 6){
+//     if(fread(tests, sizeof(char), filestat.st_size, file) != filestat.st_size){
+//         printf("error\n");
+//     } 
+// // stat(file) -> calloc
+// // file -> buff
+// // sscanf(buff) -> struct test
+// // test(struct test)
 
-        index++;
 
-        if(index>=nTests){
-            break;
+    while((fscanf(file, "%lf %lf %lf %lf %lf %d", test_data.abc, test_data.abc + 1, 
+            test_data.abc + 2, test_data.answersRef, test_data.answersRef + 1, 
+            &(test_data.nRootsRef)) == 6)){
+            
+            test_square(&test_data);
         }
-        
-    }
-    fclose(file);
     
-    for(int i = 0; i < nTests; i++){
-        test_square(&tests[i], i+1);
-    }
+
+    fclose(file);
+
 }
