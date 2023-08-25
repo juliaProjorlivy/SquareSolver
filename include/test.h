@@ -3,7 +3,7 @@
  *
  *       Filename:  tests.h
  *
- *    Description:  Header file of the test
+ *    Description:  Header file for test
  *
  *        Created:  24/03/2023
  *       Compiler:  g++
@@ -15,13 +15,11 @@
 #define TEST_H
 
 #define GREEN "\033[92m"    /**< paint command line text green */  
-#define END_COLOR "\x1b[39;49m" /**< paint command line text default color */
-#define RED "\033[91m" /**< paint command line text red */
 
-enum TEST_STATE{TEST_SUCCESS, TEST_FAILURE};
+enum TEST_STATE {FTEST_SUCCESS, FTEST_FAILURE};
 
 void run_default_tests();
 
-int run_tests(const char *file_name);
+int run_tests (const char *file_name);
 
 #endif
