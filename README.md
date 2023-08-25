@@ -37,8 +37,6 @@ Example:
     $ ./testing.exe --UnitTest
     test case passed successully
 
-
-
     ///failed launch
     $ make tests
     $ ./testing.exe --UnitTest
