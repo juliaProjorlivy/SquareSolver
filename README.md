@@ -1,12 +1,13 @@
 #
 
 ## Quick Usage
+### To build
 ```
 $ make
 ```
 ### To start:
 ```
-$ ./build.exe
+$ ./solve_square.exe
 ```
 ### To start tests:
 ```
