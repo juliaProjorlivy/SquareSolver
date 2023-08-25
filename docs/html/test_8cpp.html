@@ -75,17 +75,20 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">test.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="solve__quadratic__eq_8h_source.html">solve_quadratic_eq.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="verror_8h_source.html">verror.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="solve__quadratic__eq_8h_source.html">solve_quadratic_eq.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="test_8h_source.html">test.h</a>&quot;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -93,82 +96,53 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">data template for tests  <a href="structtest.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:acfbc006ea433ad708fdee3e82996e721"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#acfbc006ea433ad708fdee3e82996e721">GREEN</a>&#160;&#160;&#160;&quot;\033[92m&quot;</td></tr>
-<tr class="separator:acfbc006ea433ad708fdee3e82996e721"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a475df0d9bbf72a496b3b362ef75a2a0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#a475df0d9bbf72a496b3b362ef75a2a0f">END_COLOR</a>&#160;&#160;&#160;&quot;\x1b[39;49m&quot;</td></tr>
-<tr class="separator:a475df0d9bbf72a496b3b362ef75a2a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d23feea868a983c8c2b661e1e16972f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#a8d23feea868a983c8c2b661e1e16972f">RED</a>&#160;&#160;&#160;&quot;\033[91m&quot;</td></tr>
-<tr class="separator:a8d23feea868a983c8c2b661e1e16972f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac3ef4e4ac9b8681e56bf390cb4c152cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#ac3ef4e4ac9b8681e56bf390cb4c152cd">run_tests</a> ()</td></tr>
-<tr class="separator:ac3ef4e4ac9b8681e56bf390cb4c152cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba39c81027003d61d9a4c1f582aa2db7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#aba39c81027003d61d9a4c1f582aa2db7">run_default_tests</a> ()</td></tr>
+<tr class="separator:aba39c81027003d61d9a4c1f582aa2db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac408c33c2e6bf6fa70be819ced0f40e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#ac408c33c2e6bf6fa70be819ced0f40e7">run_tests</a> (const char *file_name)</td></tr>
+<tr class="separator:ac408c33c2e6bf6fa70be819ced0f40e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a475df0d9bbf72a496b3b362ef75a2a0f" name="a475df0d9bbf72a496b3b362ef75a2a0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a475df0d9bbf72a496b3b362ef75a2a0f">&#9670;&#160;</a></span>END_COLOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define END_COLOR&#160;&#160;&#160;&quot;\x1b[39;49m&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>paint command line text default color </p>
-
-</div>
-</div>
-<a id="acfbc006ea433ad708fdee3e82996e721" name="acfbc006ea433ad708fdee3e82996e721"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfbc006ea433ad708fdee3e82996e721">&#9670;&#160;</a></span>GREEN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define GREEN&#160;&#160;&#160;&quot;\033[92m&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>paint command line text green </p>
-
-</div>
-</div>
-<a id="a8d23feea868a983c8c2b661e1e16972f" name="a8d23feea868a983c8c2b661e1e16972f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d23feea868a983c8c2b661e1e16972f">&#9670;&#160;</a></span>RED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RED&#160;&#160;&#160;&quot;\033[91m&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>paint command line text red </p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ac3ef4e4ac9b8681e56bf390cb4c152cd" name="ac3ef4e4ac9b8681e56bf390cb4c152cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3ef4e4ac9b8681e56bf390cb4c152cd">&#9670;&#160;</a></span>run_tests()</h2>
+<a id="aba39c81027003d61d9a4c1f582aa2db7" name="aba39c81027003d61d9a4c1f582aa2db7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba39c81027003d61d9a4c1f582aa2db7">&#9670;&#160;</a></span>run_default_tests()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void run_tests </td>
+          <td class="memname">void run_default_tests </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Test runner function </p>
+<p>Run default tests </p>
+
+</div>
+</div>
+<a id="ac408c33c2e6bf6fa70be819ced0f40e7" name="ac408c33c2e6bf6fa70be819ced0f40e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac408c33c2e6bf6fa70be819ced0f40e7">&#9670;&#160;</a></span>run_tests()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int run_tests </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Run tests from the file. Takes the file name. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file_name</td><td>the name of the file </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

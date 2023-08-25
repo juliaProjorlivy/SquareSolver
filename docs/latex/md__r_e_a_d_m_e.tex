@@ -1,0 +1,54 @@
+\chapter{Solve Quadratic Equation}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Solve Quadratic Equation@{Solve Quadratic Equation}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Description}{Description}}\label{md__r_e_a_d_m_e_autotoc_md1}
+Solves quadratic equation. Takes coifficients and returns the solution to the equation. Outputs to stdout.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{md__r_e_a_d_m_e_autotoc_md2}
+To compile\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ make}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ ./solve\_square.exe}
+
+\end{DoxyCode}
+ Example run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ make}
+\DoxyCodeLine{\$\ ./solve\_square.exe}
+\DoxyCodeLine{enter\ the\ coefficients\ separated\ by\ spaces:}
+\DoxyCodeLine{5\ -\/6\ -\/6\ \ \ \ \ \ \ \ \ \ \ \ \ ///your\ input}
+\DoxyCodeLine{5.000000\ -\/6.000000\ -\/6.000000}
+\DoxyCodeLine{the\ roots\ are:}
+\DoxyCodeLine{x1\ =\ 1.849000}
+\DoxyCodeLine{x2\ =\ -\/0.649000}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Testing}{Testing}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ make\ tests}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ ./testsing.exe\ -\/-\/UnitTest}
+
+\end{DoxyCode}
+ Example\+: \begin{DoxyVerb}///successfull launch
+$ make tests
+$ ./testing.exe --UnitTest
+test case passed successully
+
+///failed launch
+$ make tests
+$ ./testing.exe --UnitTest
+test case failed
+x1 = 0.000000; x2 = 0.000000; nRoots = 0
+expected:
+x1 = 0.000000; x2 = 6.000000; nRoots = 0
+\end{DoxyVerb}
+ 

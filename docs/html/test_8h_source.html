@@ -88,13 +88,25 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * ============================================================================</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef TEST_H</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define TEST_H</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">void</span> <a class="code hl_function" href="test_8h.html#ac3ef4e4ac9b8681e56bf390cb4c152cd">run_tests</a>();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="atest_8h_html_ac3ef4e4ac9b8681e56bf390cb4c152cd"><div class="ttname"><a href="test_8h.html#ac3ef4e4ac9b8681e56bf390cb4c152cd">run_tests</a></div><div class="ttdeci">void run_tests()</div><div class="ttdef"><b>Definition</b> test.cpp:70</div></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef TEST_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define TEST_H</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="test_8h.html#acfbc006ea433ad708fdee3e82996e721">   17</a></span><span class="preprocessor">#define GREEN &quot;\033[92m&quot;</span>    </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="test_8h.html#a475df0d9bbf72a496b3b362ef75a2a0f">   18</a></span><span class="preprocessor">#define END_COLOR &quot;\x1b[39;49m&quot;</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="test_8h.html#a8d23feea868a983c8c2b661e1e16972f">   19</a></span><span class="preprocessor">#define RED &quot;\033[91m&quot;</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="test_8h.html#a7010bdd588d627529b5948acb89dc09daed09fcfe2550b15a378dca2203d0c31b">   21</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="test_8h.html#a7010bdd588d627529b5948acb89dc09d">TEST_STATE</a>{<a class="code hl_enumvalue" href="test_8h.html#a7010bdd588d627529b5948acb89dc09daa1244c0fe3ab7427e3451341048559c8">TEST_SUCCESS</a>, <a class="code hl_enumvalue" href="test_8h.html#a7010bdd588d627529b5948acb89dc09daed09fcfe2550b15a378dca2203d0c31b">TEST_FAILURE</a>};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> <a class="code hl_function" href="test_8h.html#aba39c81027003d61d9a4c1f582aa2db7">run_default_tests</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">int</span> <a class="code hl_function" href="test_8h.html#ac408c33c2e6bf6fa70be819ced0f40e7">run_tests</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *file_name);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="atest_8h_html_a7010bdd588d627529b5948acb89dc09d"><div class="ttname"><a href="test_8h.html#a7010bdd588d627529b5948acb89dc09d">TEST_STATE</a></div><div class="ttdeci">TEST_STATE</div><div class="ttdef"><b>Definition</b> test.h:21</div></div>
+<div class="ttc" id="atest_8h_html_a7010bdd588d627529b5948acb89dc09daa1244c0fe3ab7427e3451341048559c8"><div class="ttname"><a href="test_8h.html#a7010bdd588d627529b5948acb89dc09daa1244c0fe3ab7427e3451341048559c8">TEST_SUCCESS</a></div><div class="ttdeci">@ TEST_SUCCESS</div><div class="ttdef"><b>Definition</b> test.h:21</div></div>
+<div class="ttc" id="atest_8h_html_a7010bdd588d627529b5948acb89dc09daed09fcfe2550b15a378dca2203d0c31b"><div class="ttname"><a href="test_8h.html#a7010bdd588d627529b5948acb89dc09daed09fcfe2550b15a378dca2203d0c31b">TEST_FAILURE</a></div><div class="ttdeci">@ TEST_FAILURE</div><div class="ttdef"><b>Definition</b> test.h:21</div></div>
+<div class="ttc" id="atest_8h_html_aba39c81027003d61d9a4c1f582aa2db7"><div class="ttname"><a href="test_8h.html#aba39c81027003d61d9a4c1f582aa2db7">run_default_tests</a></div><div class="ttdeci">void run_default_tests()</div><div class="ttdef"><b>Definition</b> test.cpp:70</div></div>
+<div class="ttc" id="atest_8h_html_ac408c33c2e6bf6fa70be819ced0f40e7"><div class="ttname"><a href="test_8h.html#ac408c33c2e6bf6fa70be819ced0f40e7">run_tests</a></div><div class="ttdeci">int run_tests(const char *file_name)</div><div class="ttdef"><b>Definition</b> test.cpp:91</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -14,11 +14,19 @@
 \DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
 \DoxyCodeLine{00011\ \textcolor{comment}{\ *\ ============================================================================}}
 \DoxyCodeLine{00012\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ TEST\_H}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ TEST\_H}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_ac3ef4e4ac9b8681e56bf390cb4c152cd}{run\_tests}}();}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ TEST\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ TEST\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ GREEN\ "{}\(\backslash\)033[92m"{}}\ \ \ \ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ END\_COLOR\ "{}\(\backslash\)x1b[39;49m"{}}\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ RED\ "{}\(\backslash\)033[91m"{}}\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09d}{TEST\_STATE}}\{\mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09daa1244c0fe3ab7427e3451341048559c8}{TEST\_SUCCESS}},\ \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09daed09fcfe2550b15a378dca2203d0c31b}{TEST\_FAILURE}}\};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_aba39c81027003d61d9a4c1f582aa2db7}{run\_default\_tests}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_ac408c33c2e6bf6fa70be819ced0f40e7}{run\_tests}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *file\_name);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

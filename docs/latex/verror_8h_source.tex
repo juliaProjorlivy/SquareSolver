@@ -1,0 +1,31 @@
+\doxysection{verror.\+h}
+\hypertarget{verror_8h_source}{}\label{verror_8h_source}\index{include/verror.h@{include/verror.h}}
+\mbox{\hyperlink{verror_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \ \textcolor{comment}{/*\ ============================================================================}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ \ Filename:\ \ error.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ Description:\ \ Header\ file\ for\ error}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ Created:\ \ 24/03/2023}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ \ Compiler:\ \ g++}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ ============================================================================}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ VERROR\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ VERROR\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ RED\ "{}\(\backslash\)x1b[31;1m"{}}\ \ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ END\_OF\_RED\ "{}\(\backslash\)n\(\backslash\)x1b[39;49m"{}}\ \ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ VERROR(...)\ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ fprintf(stderr,\ RED\ "{}\%s\ (\%d):\ "{}},\ \_\_FILE\_\_,\ \_\_LINE\_\_);\ \(\backslash\)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ verror(\_\_VA\_ARGS\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00022\ \ \ \ \ \}\ while(0)}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{verror_8h_a8904776263b99e3997457d98c6e38cfe}{verror}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *description,\ ...);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

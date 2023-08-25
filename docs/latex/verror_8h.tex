@@ -1,0 +1,58 @@
+\doxysection{include/verror.h File Reference}
+\hypertarget{verror_8h}{}\label{verror_8h}\index{include/verror.h@{include/verror.h}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{verror_8h_a8d23feea868a983c8c2b661e1e16972f}{RED}}~\"{}\textbackslash{}x1b\mbox{[}31;1m\"{}
+\item 
+\#define \mbox{\hyperlink{verror_8h_ab192ec3e3e11581cb7a5863ec1708a0d}{END\+\_\+\+OF\+\_\+\+RED}}~\"{}\textbackslash{}n\textbackslash{}x1b\mbox{[}39;49m\"{}
+\item 
+\#define \mbox{\hyperlink{verror_8h_af08760f5bc70ebcba862c0a12d664702}{VERROR}}(...)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{verror_8h_a8904776263b99e3997457d98c6e38cfe}{verror}} (const char \texorpdfstring{$\ast$}{*}description,...)
+\begin{DoxyCompactList}\small\item\em Print the error description, file and line where an error happened. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{verror_8h_ab192ec3e3e11581cb7a5863ec1708a0d}\label{verror_8h_ab192ec3e3e11581cb7a5863ec1708a0d} 
+\index{verror.h@{verror.h}!END\_OF\_RED@{END\_OF\_RED}}
+\index{END\_OF\_RED@{END\_OF\_RED}!verror.h@{verror.h}}
+\doxysubsubsection{\texorpdfstring{END\_OF\_RED}{END\_OF\_RED}}
+{\footnotesize\ttfamily \#define END\+\_\+\+OF\+\_\+\+RED~\"{}\textbackslash{}n\textbackslash{}x1b\mbox{[}39;49m\"{}}
+
+paint command line default color \Hypertarget{verror_8h_a8d23feea868a983c8c2b661e1e16972f}\label{verror_8h_a8d23feea868a983c8c2b661e1e16972f} 
+\index{verror.h@{verror.h}!RED@{RED}}
+\index{RED@{RED}!verror.h@{verror.h}}
+\doxysubsubsection{\texorpdfstring{RED}{RED}}
+{\footnotesize\ttfamily \#define RED~\"{}\textbackslash{}x1b\mbox{[}31;1m\"{}}
+
+paint command line text red \Hypertarget{verror_8h_af08760f5bc70ebcba862c0a12d664702}\label{verror_8h_af08760f5bc70ebcba862c0a12d664702} 
+\index{verror.h@{verror.h}!VERROR@{VERROR}}
+\index{VERROR@{VERROR}!verror.h@{verror.h}}
+\doxysubsubsection{\texorpdfstring{VERROR}{VERROR}}
+{\footnotesize\ttfamily \#define VERROR(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{verror_8h_a8d23feea868a983c8c2b661e1e16972f}{RED}}\ \textcolor{stringliteral}{"{}\%s\ (\%d):\ "{}},\ \_\_FILE\_\_,\ \_\_LINE\_\_);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ verror(\_\_VA\_ARGS\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{verror_8h_a8904776263b99e3997457d98c6e38cfe}\label{verror_8h_a8904776263b99e3997457d98c6e38cfe} 
+\index{verror.h@{verror.h}!verror@{verror}}
+\index{verror@{verror}!verror.h@{verror.h}}
+\doxysubsubsection{\texorpdfstring{verror()}{verror()}}
+{\footnotesize\ttfamily void verror (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{description,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Print the error description, file and line where an error happened. 
+

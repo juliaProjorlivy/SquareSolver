@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: File Members</title>
+<title>My Project: src/verror.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,18 +67,58 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">verror.cpp File Reference</div></div>
+</div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all functions with links to the files they belong to:</div><ul>
-<li>clear_buf()&#160;:&#160;<a class="el" href="input_8h.html#a6f32e21adff1363abf5a80ba3dfb4ace">input.h</a>, <a class="el" href="input_8cpp.html#a6f32e21adff1363abf5a80ba3dfb4ace">input.cpp</a></li>
-<li>get_coefficients()&#160;:&#160;<a class="el" href="input_8h.html#a2ae675730e3fbce8a8e9d5d4feba6b8e">input.h</a>, <a class="el" href="input_8cpp.html#a2ae675730e3fbce8a8e9d5d4feba6b8e">input.cpp</a></li>
-<li>is_equal()&#160;:&#160;<a class="el" href="solve__quadratic__eq_8h.html#a6bb85104817dc6c298e57ae4a3b2b21f">solve_quadratic_eq.h</a>, <a class="el" href="solve__quadratic__eq_8cpp.html#a7dbfa00a16d98cc3c3416420f25b9553">solve_quadratic_eq.cpp</a></li>
-<li>main()&#160;:&#160;<a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main.cpp</a></li>
-<li>run_default_tests()&#160;:&#160;<a class="el" href="test_8h.html#aba39c81027003d61d9a4c1f582aa2db7">test.h</a>, <a class="el" href="test_8cpp.html#aba39c81027003d61d9a4c1f582aa2db7">test.cpp</a></li>
-<li>run_tests()&#160;:&#160;<a class="el" href="test_8h.html#ac408c33c2e6bf6fa70be819ced0f40e7">test.h</a>, <a class="el" href="test_8cpp.html#ac408c33c2e6bf6fa70be819ced0f40e7">test.cpp</a></li>
-<li>solve_linear()&#160;:&#160;<a class="el" href="solve__quadratic__eq_8h.html#a70848b1895685cc6cde9035602ac5a13">solve_quadratic_eq.h</a>, <a class="el" href="solve__quadratic__eq_8cpp.html#a70848b1895685cc6cde9035602ac5a13">solve_quadratic_eq.cpp</a></li>
-<li>solve_quadratic_equation()&#160;:&#160;<a class="el" href="solve__quadratic__eq_8h.html#a538c5f65528a4ab653351fdad2a42ee9">solve_quadratic_eq.h</a>, <a class="el" href="solve__quadratic__eq_8cpp.html#a538c5f65528a4ab653351fdad2a42ee9">solve_quadratic_eq.cpp</a></li>
-<li>verror()&#160;:&#160;<a class="el" href="verror_8h.html#a8904776263b99e3997457d98c6e38cfe">verror.h</a>, <a class="el" href="verror_8cpp.html#a8904776263b99e3997457d98c6e38cfe">verror.cpp</a></li>
-</ul>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="verror_8h_source.html">verror.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a8904776263b99e3997457d98c6e38cfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="verror_8cpp.html#a8904776263b99e3997457d98c6e38cfe">verror</a> (const char *description,...)</td></tr>
+<tr class="memdesc:a8904776263b99e3997457d98c6e38cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the error description, file and line where an error happened.  <br /></td></tr>
+<tr class="separator:a8904776263b99e3997457d98c6e38cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a8904776263b99e3997457d98c6e38cfe" name="a8904776263b99e3997457d98c6e38cfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8904776263b99e3997457d98c6e38cfe">&#9670;&#160;</a></span>verror()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void verror </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print the error description, file and line where an error happened. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['solve_5fquadratic_5feq_2ecpp_0',['solve_quadratic_eq.cpp',['../solve__quadratic__eq_8cpp.html',1,'']]],
-  ['solve_5fquadratic_5feq_2eh_1',['solve_quadratic_eq.h',['../solve__quadratic__eq_8h.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
 ];
