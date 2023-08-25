@@ -73,12 +73,12 @@ int main(int argc, char *argv[])
             printf("infinite number of roots\n");
             break;
         default:
-            printf("unexpected number of solutions:%d\n", number_of_roots);
+            fprintf(stderr, RED "unexpected number of solutions:%d\n" END_OF_RED, number_of_roots);
         }
     }
     else
     {
-        printf(RED "ERROR: unexpected EOF in string" END_OF_RED);
+        fprintf(stderr, RED "ERROR: unexpected EOF in string" END_OF_RED);
     }
     #endif
     return 0;
