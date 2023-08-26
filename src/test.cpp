@@ -18,6 +18,11 @@
 #include <stdio.h>
 #include <math.h>
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <stdlib.h>
+
 /*!
 
 	\brief  data template for tests
@@ -36,6 +41,8 @@ struct test{
     
 */
 static int test_square (const test *data){
+    assert (data != NULL);
+
     int success = 0;
     const double EPSILON2 = 1e-5; /**< the equivalent number */ 
     double answer1 = 0, answer2 = 0;
@@ -87,6 +94,15 @@ int run_tests (const char *file_name)
 
     FILE *file = fopen (file_name, "r");
 
+    // struct stat buf = {};
+    // stat(file_name, &buf);
+
+    // size_t size = buf.st_size;
+    
+    // if((fread(&buf, sizeof(char), size, file)) != (int)size){
+    //     printf("ERROR");
+    // }
+
     if (file == NULL)
     {
         VERROR ("ERROR: file cannot be opened");
@@ -101,6 +117,11 @@ int run_tests (const char *file_name)
             test_square (&test_data);
         }
     
-    fclose (file);
+    if(fclose (file) != 0)
+    {
+        VERROR ("file %s cannot be closed", file_name);
+        
+        return FTEST_FAILURE;
+    }
     return FTEST_SUCCESS;
 }

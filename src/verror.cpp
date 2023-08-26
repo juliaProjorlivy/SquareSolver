@@ -5,9 +5,9 @@
  *
  *    Description:  Find an error
  *
- *        Created:  24/08/2023 
+ *        Created:  24/08/2023
  *       Compiler:  g++
- * 
+ *
  * ============================================================================
  */
 #include <stdio.h>
@@ -15,15 +15,16 @@
 #include "verror.h"
 
 /*!
-	\brief Print the error description, file and line where an error happened.
+    \brief Print the error description, file and line where an error happened.
 */
-void verror (const char *description, ...) 
+void verror(const char *description, ...)
 {
-    fprintf (stderr, "ERROR: ");
-    
-    va_list args;
-    va_start (args, description);
-    vfprintf (stderr, description, args);
+    fprintf(stderr, "ERROR: ");
 
-    fprintf (stderr, END_OF_COLOR);
+    va_list args;
+    va_start(args, description);
+    vfprintf(stderr, description, args);
+    va_end(args);
+
+    fprintf(stderr, END_OF_COLOR);
 }
