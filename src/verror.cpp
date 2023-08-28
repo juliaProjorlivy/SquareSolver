@@ -10,9 +10,9 @@
  *
  * ============================================================================
  */
+#include "verror.h"
 #include <stdio.h>
 #include <stdarg.h>
-#include "verror.h"
 
 /*!
     \brief Print the error description, file and line where an error happened.

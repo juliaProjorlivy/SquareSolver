@@ -9,7 +9,7 @@ $ make
 ```
 ## Usage
 ```
-$ ./solve_square.exe
+$ ./all
 ```
 Example run:
 ```
@@ -24,22 +24,17 @@ x2 = -0.649000
 ```
 
 ## Testing
-```
-$ make tests
-```
-```
-$ ./testsing.exe --UnitTest
-```
+
 Example:
 
-    ///successfull launch
-    $ make tests
-    $ ./testing.exe --UnitTest
+    ///successful launch
+    $ make
+    $ ./all --UnitTest
     test case passed successully
 
     ///failed launch
     $ make tests
-    $ ./testing.exe --UnitTest
+    $ ./all --UnitTest
     test case failed
     x1 = 0.000000; x2 = 0.000000; nRoots = 0
     expected:

@@ -90,18 +90,11 @@ void run_default_tests()
  */
 int run_tests (const char *file_name)
 {
+    assert (file_name != NULL);
+
     test test_data = {};
 
     FILE *file = fopen (file_name, "r");
-
-    // struct stat buf = {};
-    // stat(file_name, &buf);
-
-    // size_t size = buf.st_size;
-    
-    // if((fread(&buf, sizeof(char), size, file)) != (int)size){
-    //     printf("ERROR");
-    // }
 
     if (file == NULL)
     {
