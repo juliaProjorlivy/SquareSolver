@@ -18,9 +18,9 @@
 /**
  * include test.h in case of running the tests
  */
-// #ifdef RUN_TESTS
+#ifdef RUN_TESTS
 #include "test.h"
-// #endif
+#endif
 
 #include <stdio.h>
 #include <string.h>
@@ -30,9 +30,10 @@ void state_roots(int number_of_roots, double answer1, double answer2);
 
 int main(int argc, char *argv[])
 {
-    /**
-     * run tests
-     */
+/**
+ * run tests
+ */
+#ifdef RUN_TESTS
     if (argc >= 2)
     {
         if (!strcmp(argv[1], "--UnitTest"))
@@ -49,9 +50,9 @@ int main(int argc, char *argv[])
                     return FTEST_FAILURE;
                 }
             }
-            return 0;
         }
     }
+#endif
 
     (void)argc;
     (void)argv;
