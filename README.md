@@ -8,7 +8,7 @@ To compile:
 $ make
 ```
 ## Usage
-```bash
+```console
 $ ./solve_square.exe
 ```
 Example run:
