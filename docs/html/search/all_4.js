@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['get_5fcoefficients_0',['get_coefficients',['../input_8h.html#a2ae675730e3fbce8a8e9d5d4feba6b8e',1,'get_coefficients(double *a, double *b, double *c):&#160;input.cpp'],['../input_8cpp.html#a2ae675730e3fbce8a8e9d5d4feba6b8e',1,'get_coefficients(double *a, double *b, double *c):&#160;input.cpp']]],
-  ['green_1',['GREEN',['../test_8h.html#acfbc006ea433ad708fdee3e82996e721',1,'test.h']]]
+  ['ftest_5ffailure_0',['FTEST_FAILURE',['../test_8h.html#a7010bdd588d627529b5948acb89dc09dadb722c0f07478d797046ef2885f5e69b',1,'test.h']]],
+  ['ftest_5fsuccess_1',['FTEST_SUCCESS',['../test_8h.html#a7010bdd588d627529b5948acb89dc09daf94ad90228e86090227d5c4068740c2b',1,'test.h']]]
 ];

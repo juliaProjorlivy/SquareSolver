@@ -1,0 +1,80 @@
+\doxysection{include/io.h File Reference}
+\hypertarget{io_8h}{}\label{io_8h}\index{include/io.h@{include/io.h}}
+{\ttfamily \#include \"{}test.\+h\"{}}\newline
+{\ttfamily \#include \"{}solve\+\_\+quadratic\+\_\+eq.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09d}{TEST\+\_\+\+STATE}} \mbox{\hyperlink{io_8h_ab83643324dc586c37e1fffbf4e245dd5}{whether\+\_\+to\+\_\+run\+\_\+tests}} (int argc, const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em runs test if user demands this via command line arguments key \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{io_8h_a89104d1314bd1b9ccf5553c4e5399d36}{clear\+\_\+buf}} ()
+\begin{DoxyCompactList}\small\item\em Clears the input buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{io_8h_a2ae675730e3fbce8a8e9d5d4feba6b8e}{get\+\_\+coefficients}} (double \texorpdfstring{$\ast$}{*}a, double \texorpdfstring{$\ast$}{*}b, double \texorpdfstring{$\ast$}{*}c)
+\begin{DoxyCompactList}\small\item\em Reads input data and in case of an incorrect input asks user to type again. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{io_8h_ae7327d58ae48a7177d34e3b55e4dc0d2}{print\+\_\+roots}} (enum \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56}{NUMBER\+\_\+\+OF\+\_\+\+SOLUTIONS}} number\+\_\+of\+\_\+roots, double answer1, double answer2)
+\begin{DoxyCompactList}\small\item\em prints the answers to the quadratic equation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{io_8h_a89104d1314bd1b9ccf5553c4e5399d36}\label{io_8h_a89104d1314bd1b9ccf5553c4e5399d36} 
+\index{io.h@{io.h}!clear\_buf@{clear\_buf}}
+\index{clear\_buf@{clear\_buf}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{clear\_buf()}{clear\_buf()}}
+{\footnotesize\ttfamily void clear\+\_\+buf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the input buffer. 
+
+\Hypertarget{io_8h_a2ae675730e3fbce8a8e9d5d4feba6b8e}\label{io_8h_a2ae675730e3fbce8a8e9d5d4feba6b8e} 
+\index{io.h@{io.h}!get\_coefficients@{get\_coefficients}}
+\index{get\_coefficients@{get\_coefficients}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{get\_coefficients()}{get\_coefficients()}}
+{\footnotesize\ttfamily int get\+\_\+coefficients (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{a,  }\item[{double \texorpdfstring{$\ast$}{*}}]{b,  }\item[{double \texorpdfstring{$\ast$}{*}}]{c }\end{DoxyParamCaption})}
+
+
+
+Reads input data and in case of an incorrect input asks user to type again. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em a} & quadratic coefficient before x\texorpdfstring{$^\wedge$}{\string^}2 \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em b} & quadratic coefficient before x \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em c} & free term of quadratic equation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of parametrs that were read 
+\end{DoxyReturn}
+\Hypertarget{io_8h_ae7327d58ae48a7177d34e3b55e4dc0d2}\label{io_8h_ae7327d58ae48a7177d34e3b55e4dc0d2} 
+\index{io.h@{io.h}!print\_roots@{print\_roots}}
+\index{print\_roots@{print\_roots}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{print\_roots()}{print\_roots()}}
+{\footnotesize\ttfamily void print\+\_\+roots (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56}{NUMBER\+\_\+\+OF\+\_\+\+SOLUTIONS}}}]{number\+\_\+of\+\_\+roots,  }\item[{double}]{answer1,  }\item[{double}]{answer2 }\end{DoxyParamCaption})}
+
+
+
+prints the answers to the quadratic equation 
+
+\Hypertarget{io_8h_ab83643324dc586c37e1fffbf4e245dd5}\label{io_8h_ab83643324dc586c37e1fffbf4e245dd5} 
+\index{io.h@{io.h}!whether\_to\_run\_tests@{whether\_to\_run\_tests}}
+\index{whether\_to\_run\_tests@{whether\_to\_run\_tests}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{whether\_to\_run\_tests()}{whether\_to\_run\_tests()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09d}{TEST\+\_\+\+STATE}} whether\+\_\+to\+\_\+run\+\_\+tests (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+runs test if user demands this via command line arguments key 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argc} & the number of arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & command line arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}

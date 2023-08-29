@@ -5,23 +5,23 @@
 \item 
 \#define \mbox{\hyperlink{verror_8h_a8d23feea868a983c8c2b661e1e16972f}{RED}}~\"{}\textbackslash{}x1b\mbox{[}31;1m\"{}
 \item 
-\#define \mbox{\hyperlink{verror_8h_ab192ec3e3e11581cb7a5863ec1708a0d}{END\+\_\+\+OF\+\_\+\+RED}}~\"{}\textbackslash{}n\textbackslash{}x1b\mbox{[}39;49m\"{}
+\#define \mbox{\hyperlink{verror_8h_a6ad50e7fab618cbd2563573e9332ccb4}{END\+\_\+\+OF\+\_\+\+COLOR}}~\"{}\textbackslash{}n\textbackslash{}x1b\mbox{[}39;49m\"{}
 \item 
 \#define \mbox{\hyperlink{verror_8h_af08760f5bc70ebcba862c0a12d664702}{VERROR}}(...)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Print the error description, file and line where an error happened. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{verror_8h_a8904776263b99e3997457d98c6e38cfe}{verror}} (const char \texorpdfstring{$\ast$}{*}description,...)
-\begin{DoxyCompactList}\small\item\em Print the error description, file and line where an error happened. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{verror_8h_ab192ec3e3e11581cb7a5863ec1708a0d}\label{verror_8h_ab192ec3e3e11581cb7a5863ec1708a0d} 
-\index{verror.h@{verror.h}!END\_OF\_RED@{END\_OF\_RED}}
-\index{END\_OF\_RED@{END\_OF\_RED}!verror.h@{verror.h}}
-\doxysubsubsection{\texorpdfstring{END\_OF\_RED}{END\_OF\_RED}}
-{\footnotesize\ttfamily \#define END\+\_\+\+OF\+\_\+\+RED~\"{}\textbackslash{}n\textbackslash{}x1b\mbox{[}39;49m\"{}}
+\Hypertarget{verror_8h_a6ad50e7fab618cbd2563573e9332ccb4}\label{verror_8h_a6ad50e7fab618cbd2563573e9332ccb4} 
+\index{verror.h@{verror.h}!END\_OF\_COLOR@{END\_OF\_COLOR}}
+\index{END\_OF\_COLOR@{END\_OF\_COLOR}!verror.h@{verror.h}}
+\doxysubsubsection{\texorpdfstring{END\_OF\_COLOR}{END\_OF\_COLOR}}
+{\footnotesize\ttfamily \#define END\+\_\+\+OF\+\_\+\+COLOR~\"{}\textbackslash{}n\textbackslash{}x1b\mbox{[}39;49m\"{}}
 
 paint command line default color \Hypertarget{verror_8h_a8d23feea868a983c8c2b661e1e16972f}\label{verror_8h_a8d23feea868a983c8c2b661e1e16972f} 
 \index{verror.h@{verror.h}!RED@{RED}}
@@ -37,12 +37,17 @@ paint command line text red \Hypertarget{verror_8h_af08760f5bc70ebcba862c0a12d66
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{verror_8h_a8d23feea868a983c8c2b661e1e16972f}{RED}}\ \textcolor{stringliteral}{"{}\%s\ (\%d):\ "{}},\ \_\_FILE\_\_,\ \_\_LINE\_\_);\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ verror(\_\_VA\_ARGS\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ fprintf\ (stderr,\ \mbox{\hyperlink{verror_8h_a8d23feea868a983c8c2b661e1e16972f}{RED}}\ \textcolor{stringliteral}{"{}\%s\ (\%d):\ "{}},\ \_\_FILE\_\_,\ \_\_LINE\_\_);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ verror\ (\_\_VA\_ARGS\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ fprintf\ (stderr,\ \mbox{\hyperlink{verror_8h_a6ad50e7fab618cbd2563573e9332ccb4}{END\_OF\_COLOR}});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
 
 \end{DoxyCode}
+
+
+Print the error description, file and line where an error happened. 
+
 
 
 \doxysubsection{Function Documentation}
@@ -51,8 +56,4 @@ paint command line text red \Hypertarget{verror_8h_af08760f5bc70ebcba862c0a12d66
 \index{verror@{verror}!verror.h@{verror.h}}
 \doxysubsubsection{\texorpdfstring{verror()}{verror()}}
 {\footnotesize\ttfamily void verror (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{description,  }\item[{}]{... }\end{DoxyParamCaption})}
-
-
-
-Print the error description, file and line where an error happened. 
 

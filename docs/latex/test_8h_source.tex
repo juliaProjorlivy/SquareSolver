@@ -7,7 +7,7 @@
 \DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
 \DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ Filename:\ \ tests.h}}
 \DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ Description:\ \ Header\ file\ of\ the\ test}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ Description:\ \ Header\ file\ for\ test}}
 \DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
 \DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ Created:\ \ 24/03/2023}}
 \DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ \ \ \ \ \ Compiler:\ \ g++}}
@@ -19,14 +19,17 @@
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ TEST\_H}}
 \DoxyCodeLine{00016\ }
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ GREEN\ "{}\(\backslash\)033[92m"{}}\ \ \ \ }
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ END\_COLOR\ "{}\(\backslash\)x1b[39;49m"{}}\ }
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ RED\ "{}\(\backslash\)033[91m"{}}\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09d}{TEST\_STATE}}\{\mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09daa1244c0fe3ab7427e3451341048559c8}{TEST\_SUCCESS}},\ \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09daed09fcfe2550b15a378dca2203d0c31b}{TEST\_FAILURE}}\};}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_aba39c81027003d61d9a4c1f582aa2db7}{run\_default\_tests}}();}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_ac408c33c2e6bf6fa70be819ced0f40e7}{run\_tests}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *file\_name);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09d}{TEST\_STATE}}\ }
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09daf94ad90228e86090227d5c4068740c2b}{FTEST\_SUCCESS}},\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09dadb722c0f07478d797046ef2885f5e69b}{FTEST\_FAILURE}},}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09da9d1f1cd8519a85ab607284803afa766e}{TESTS\_NO\_LAUNCH}}}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_aba39c81027003d61d9a4c1f582aa2db7}{run\_default\_tests}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_a0fea33c3124532859702cead89a82c74}{run\_file\_tests}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *file\_name);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

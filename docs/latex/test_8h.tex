@@ -4,16 +4,13 @@
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{test_8h_acfbc006ea433ad708fdee3e82996e721}{GREEN}}~\"{}\textbackslash{}033\mbox{[}92m\"{}
-\item 
-\#define \mbox{\hyperlink{test_8h_a475df0d9bbf72a496b3b362ef75a2a0f}{END\+\_\+\+COLOR}}~\"{}\textbackslash{}x1b\mbox{[}39;49m\"{}
-\item 
-\#define \mbox{\hyperlink{test_8h_a8d23feea868a983c8c2b661e1e16972f}{RED}}~\"{}\textbackslash{}033\mbox{[}91m\"{}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09d}{TEST\+\_\+\+STATE}} \{ \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09daa1244c0fe3ab7427e3451341048559c8}{TEST\+\_\+\+SUCCESS}}
-, \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09daed09fcfe2550b15a378dca2203d0c31b}{TEST\+\_\+\+FAILURE}}
+enum \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09d}{TEST\+\_\+\+STATE}} \{ \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09daf94ad90228e86090227d5c4068740c2b}{FTEST\+\_\+\+SUCCESS}}
+, \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09dadb722c0f07478d797046ef2885f5e69b}{FTEST\+\_\+\+FAILURE}}
+, \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09da9d1f1cd8519a85ab607284803afa766e}{TESTS\+\_\+\+NO\+\_\+\+LAUNCH}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
@@ -21,30 +18,18 @@ enum \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09d}{TEST\+\_\+\+STA
 \item 
 void \mbox{\hyperlink{test_8h_aba39c81027003d61d9a4c1f582aa2db7}{run\+\_\+default\+\_\+tests}} ()
 \item 
-int \mbox{\hyperlink{test_8h_ac408c33c2e6bf6fa70be819ced0f40e7}{run\+\_\+tests}} (const char \texorpdfstring{$\ast$}{*}file\+\_\+name)
+int \mbox{\hyperlink{test_8h_a0fea33c3124532859702cead89a82c74}{run\+\_\+file\+\_\+tests}} (const char \texorpdfstring{$\ast$}{*}file\+\_\+name)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{test_8h_a475df0d9bbf72a496b3b362ef75a2a0f}\label{test_8h_a475df0d9bbf72a496b3b362ef75a2a0f} 
-\index{test.h@{test.h}!END\_COLOR@{END\_COLOR}}
-\index{END\_COLOR@{END\_COLOR}!test.h@{test.h}}
-\doxysubsubsection{\texorpdfstring{END\_COLOR}{END\_COLOR}}
-{\footnotesize\ttfamily \#define END\+\_\+\+COLOR~\"{}\textbackslash{}x1b\mbox{[}39;49m\"{}}
-
-paint command line text default color \Hypertarget{test_8h_acfbc006ea433ad708fdee3e82996e721}\label{test_8h_acfbc006ea433ad708fdee3e82996e721} 
+\Hypertarget{test_8h_acfbc006ea433ad708fdee3e82996e721}\label{test_8h_acfbc006ea433ad708fdee3e82996e721} 
 \index{test.h@{test.h}!GREEN@{GREEN}}
 \index{GREEN@{GREEN}!test.h@{test.h}}
 \doxysubsubsection{\texorpdfstring{GREEN}{GREEN}}
 {\footnotesize\ttfamily \#define GREEN~\"{}\textbackslash{}033\mbox{[}92m\"{}}
 
-paint command line text green \Hypertarget{test_8h_a8d23feea868a983c8c2b661e1e16972f}\label{test_8h_a8d23feea868a983c8c2b661e1e16972f} 
-\index{test.h@{test.h}!RED@{RED}}
-\index{RED@{RED}!test.h@{test.h}}
-\doxysubsubsection{\texorpdfstring{RED}{RED}}
-{\footnotesize\ttfamily \#define RED~\"{}\textbackslash{}033\mbox{[}91m\"{}}
-
-paint command line text red 
+paint command line text green 
 
 \doxysubsection{Enumeration Type Documentation}
 \Hypertarget{test_8h_a7010bdd588d627529b5948acb89dc09d}\label{test_8h_a7010bdd588d627529b5948acb89dc09d} 
@@ -53,13 +38,17 @@ paint command line text red
 \doxysubsubsection{\texorpdfstring{TEST\_STATE}{TEST\_STATE}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{test_8h_a7010bdd588d627529b5948acb89dc09d}{TEST\+\_\+\+STATE}}}
 
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_SUCCESS@{TEST\_SUCCESS}!test.h@{test.h}}\index{test.h@{test.h}!TEST\_SUCCESS@{TEST\_SUCCESS}}}\Hypertarget{test_8h_a7010bdd588d627529b5948acb89dc09daa1244c0fe3ab7427e3451341048559c8}\label{test_8h_a7010bdd588d627529b5948acb89dc09daa1244c0fe3ab7427e3451341048559c8} 
-TEST\+\_\+\+SUCCESS&\\
+For comfortable usage of 1 and 0 in return \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FTEST\_SUCCESS@{FTEST\_SUCCESS}!test.h@{test.h}}\index{test.h@{test.h}!FTEST\_SUCCESS@{FTEST\_SUCCESS}}}\Hypertarget{test_8h_a7010bdd588d627529b5948acb89dc09daf94ad90228e86090227d5c4068740c2b}\label{test_8h_a7010bdd588d627529b5948acb89dc09daf94ad90228e86090227d5c4068740c2b} 
+FTEST\+\_\+\+SUCCESS&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_FAILURE@{TEST\_FAILURE}!test.h@{test.h}}\index{test.h@{test.h}!TEST\_FAILURE@{TEST\_FAILURE}}}\Hypertarget{test_8h_a7010bdd588d627529b5948acb89dc09daed09fcfe2550b15a378dca2203d0c31b}\label{test_8h_a7010bdd588d627529b5948acb89dc09daed09fcfe2550b15a378dca2203d0c31b} 
-TEST\+\_\+\+FAILURE&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FTEST\_FAILURE@{FTEST\_FAILURE}!test.h@{test.h}}\index{test.h@{test.h}!FTEST\_FAILURE@{FTEST\_FAILURE}}}\Hypertarget{test_8h_a7010bdd588d627529b5948acb89dc09dadb722c0f07478d797046ef2885f5e69b}\label{test_8h_a7010bdd588d627529b5948acb89dc09dadb722c0f07478d797046ef2885f5e69b} 
+FTEST\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TESTS\_NO\_LAUNCH@{TESTS\_NO\_LAUNCH}!test.h@{test.h}}\index{test.h@{test.h}!TESTS\_NO\_LAUNCH@{TESTS\_NO\_LAUNCH}}}\Hypertarget{test_8h_a7010bdd588d627529b5948acb89dc09da9d1f1cd8519a85ab607284803afa766e}\label{test_8h_a7010bdd588d627529b5948acb89dc09da9d1f1cd8519a85ab607284803afa766e} 
+TESTS\+\_\+\+NO\+\_\+\+LAUNCH&\\
 \hline
 
 \end{DoxyEnumFields}
@@ -72,11 +61,11 @@ TEST\+\_\+\+FAILURE&\\
 \doxysubsubsection{\texorpdfstring{run\_default\_tests()}{run\_default\_tests()}}
 {\footnotesize\ttfamily void run\+\_\+default\+\_\+tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Run default tests \Hypertarget{test_8h_ac408c33c2e6bf6fa70be819ced0f40e7}\label{test_8h_ac408c33c2e6bf6fa70be819ced0f40e7} 
-\index{test.h@{test.h}!run\_tests@{run\_tests}}
-\index{run\_tests@{run\_tests}!test.h@{test.h}}
-\doxysubsubsection{\texorpdfstring{run\_tests()}{run\_tests()}}
-{\footnotesize\ttfamily int run\+\_\+tests (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name }\end{DoxyParamCaption})}
+Run default tests \Hypertarget{test_8h_a0fea33c3124532859702cead89a82c74}\label{test_8h_a0fea33c3124532859702cead89a82c74} 
+\index{test.h@{test.h}!run\_file\_tests@{run\_file\_tests}}
+\index{run\_file\_tests@{run\_file\_tests}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{run\_file\_tests()}{run\_file\_tests()}}
+{\footnotesize\ttfamily int run\+\_\+file\+\_\+tests (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name }\end{DoxyParamCaption})}
 
 Run tests from the file. Takes the file name. 
 \begin{DoxyParams}[1]{Parameters}

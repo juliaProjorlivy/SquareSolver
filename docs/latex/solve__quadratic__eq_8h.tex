@@ -14,9 +14,11 @@ enum \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56}
 \item 
 int \mbox{\hyperlink{solve__quadratic__eq_8h_a6bb85104817dc6c298e57ae4a3b2b21f}{is\+\_\+equal}} (double x, double y, double epsilon=\mbox{\hyperlink{solve__quadratic__eq_8h_a37f80f87b0223988379069998f2b1aca}{DEF\+\_\+\+EPSILON}})
 \begin{DoxyCompactList}\small\item\em compare two numbers up to epsilon \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{solve__quadratic__eq_8h_a70848b1895685cc6cde9035602ac5a13}{solve\+\_\+linear}} (double b, double c, double \texorpdfstring{$\ast$}{*}answer1, int number\+\_\+of\+\_\+roots)
+int \mbox{\hyperlink{solve__quadratic__eq_8h_a430723b27d2f4ee767fa141ef1d21581}{is\+\_\+less}} (double x, double y, double epsilon=\mbox{\hyperlink{solve__quadratic__eq_8h_a37f80f87b0223988379069998f2b1aca}{DEF\+\_\+\+EPSILON}})
+\begin{DoxyCompactList}\small\item\em determines if x is less than y \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56}{NUMBER\+\_\+\+OF\+\_\+\+SOLUTIONS}} \mbox{\hyperlink{solve__quadratic__eq_8h_a2a768e8ed36b5c4b88f8ea62e6ee5ddd}{solve\+\_\+linear\+\_\+equation}} (double b, double c, double \texorpdfstring{$\ast$}{*}answer1)
 \begin{DoxyCompactList}\small\item\em solve the linear equation \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{solve__quadratic__eq_8h_a538c5f65528a4ab653351fdad2a42ee9}{solve\+\_\+quadratic\+\_\+equation}} (double a, double b, double c, double \texorpdfstring{$\ast$}{*}answer1, double \texorpdfstring{$\ast$}{*}answer2)
+enum \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56}{NUMBER\+\_\+\+OF\+\_\+\+SOLUTIONS}} \mbox{\hyperlink{solve__quadratic__eq_8h_aa4f23d63a8ba9c1e59ed2eccbd829fa1}{solve\+\_\+quadratic\+\_\+equation}} (double a, double b, double c, double \texorpdfstring{$\ast$}{*}answer1, double \texorpdfstring{$\ast$}{*}answer2)
 \begin{DoxyCompactList}\small\item\em solve the quadratic equation \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -61,7 +63,7 @@ INFINITY\+\_\+\+SOL&\\
 \index{solve\_quadratic\_eq.h@{solve\_quadratic\_eq.h}!is\_equal@{is\_equal}}
 \index{is\_equal@{is\_equal}!solve\_quadratic\_eq.h@{solve\_quadratic\_eq.h}}
 \doxysubsubsection{\texorpdfstring{is\_equal()}{is\_equal()}}
-{\footnotesize\ttfamily int is\+\_\+equal (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{epsilon }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int is\+\_\+equal (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{epsilon = {\ttfamily \mbox{\hyperlink{solve__quadratic__eq_8h_a37f80f87b0223988379069998f2b1aca}{DEF\+\_\+\+EPSILON}}} }\end{DoxyParamCaption})}
 
 
 
@@ -75,11 +77,29 @@ compare two numbers up to epsilon
 \begin{DoxyReturn}{Returns}
 1 if two numbers are equal and 0 if not 
 \end{DoxyReturn}
-\Hypertarget{solve__quadratic__eq_8h_a70848b1895685cc6cde9035602ac5a13}\label{solve__quadratic__eq_8h_a70848b1895685cc6cde9035602ac5a13} 
-\index{solve\_quadratic\_eq.h@{solve\_quadratic\_eq.h}!solve\_linear@{solve\_linear}}
-\index{solve\_linear@{solve\_linear}!solve\_quadratic\_eq.h@{solve\_quadratic\_eq.h}}
-\doxysubsubsection{\texorpdfstring{solve\_linear()}{solve\_linear()}}
-{\footnotesize\ttfamily int solve\+\_\+linear (\begin{DoxyParamCaption}\item[{double}]{b,  }\item[{double}]{c,  }\item[{double \texorpdfstring{$\ast$}{*}}]{answer1,  }\item[{int}]{number\+\_\+of\+\_\+roots }\end{DoxyParamCaption})}
+\Hypertarget{solve__quadratic__eq_8h_a430723b27d2f4ee767fa141ef1d21581}\label{solve__quadratic__eq_8h_a430723b27d2f4ee767fa141ef1d21581} 
+\index{solve\_quadratic\_eq.h@{solve\_quadratic\_eq.h}!is\_less@{is\_less}}
+\index{is\_less@{is\_less}!solve\_quadratic\_eq.h@{solve\_quadratic\_eq.h}}
+\doxysubsubsection{\texorpdfstring{is\_less()}{is\_less()}}
+{\footnotesize\ttfamily int is\+\_\+less (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{epsilon = {\ttfamily \mbox{\hyperlink{solve__quadratic__eq_8h_a37f80f87b0223988379069998f2b1aca}{DEF\+\_\+\+EPSILON}}} }\end{DoxyParamCaption})}
+
+
+
+determines if x is less than y 
+
+
+\begin{DoxyParams}{Parameters}
+{\em epsilon} & the precision number which by defualt equals EPSILON = 1e-\/9 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if x is less than y and 0 if not 
+\end{DoxyReturn}
+\Hypertarget{solve__quadratic__eq_8h_a2a768e8ed36b5c4b88f8ea62e6ee5ddd}\label{solve__quadratic__eq_8h_a2a768e8ed36b5c4b88f8ea62e6ee5ddd} 
+\index{solve\_quadratic\_eq.h@{solve\_quadratic\_eq.h}!solve\_linear\_equation@{solve\_linear\_equation}}
+\index{solve\_linear\_equation@{solve\_linear\_equation}!solve\_quadratic\_eq.h@{solve\_quadratic\_eq.h}}
+\doxysubsubsection{\texorpdfstring{solve\_linear\_equation()}{solve\_linear\_equation()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56}{NUMBER\+\_\+\+OF\+\_\+\+SOLUTIONS}} solve\+\_\+linear\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{b,  }\item[{double}]{c,  }\item[{double \texorpdfstring{$\ast$}{*}}]{answer1 }\end{DoxyParamCaption})}
 
 
 
@@ -97,11 +117,11 @@ solve the linear equation
 \begin{DoxyReturn}{Returns}
 the number of linear equation roots 
 \end{DoxyReturn}
-\Hypertarget{solve__quadratic__eq_8h_a538c5f65528a4ab653351fdad2a42ee9}\label{solve__quadratic__eq_8h_a538c5f65528a4ab653351fdad2a42ee9} 
+\Hypertarget{solve__quadratic__eq_8h_aa4f23d63a8ba9c1e59ed2eccbd829fa1}\label{solve__quadratic__eq_8h_aa4f23d63a8ba9c1e59ed2eccbd829fa1} 
 \index{solve\_quadratic\_eq.h@{solve\_quadratic\_eq.h}!solve\_quadratic\_equation@{solve\_quadratic\_equation}}
 \index{solve\_quadratic\_equation@{solve\_quadratic\_equation}!solve\_quadratic\_eq.h@{solve\_quadratic\_eq.h}}
 \doxysubsubsection{\texorpdfstring{solve\_quadratic\_equation()}{solve\_quadratic\_equation()}}
-{\footnotesize\ttfamily int solve\+\_\+quadratic\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double \texorpdfstring{$\ast$}{*}}]{answer1,  }\item[{double \texorpdfstring{$\ast$}{*}}]{answer2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56}{NUMBER\+\_\+\+OF\+\_\+\+SOLUTIONS}} solve\+\_\+quadratic\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double \texorpdfstring{$\ast$}{*}}]{answer1,  }\item[{double \texorpdfstring{$\ast$}{*}}]{answer2 }\end{DoxyParamCaption})}
 
 
 

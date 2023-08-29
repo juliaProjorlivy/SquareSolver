@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['solve_5flinear_0',['solve_linear',['../solve__quadratic__eq_8h.html#a70848b1895685cc6cde9035602ac5a13',1,'solve_linear(double b, double c, double *answer1, int number_of_roots):&#160;solve_quadratic_eq.cpp'],['../solve__quadratic__eq_8cpp.html#a70848b1895685cc6cde9035602ac5a13',1,'solve_linear(double b, double c, double *answer1, int number_of_roots):&#160;solve_quadratic_eq.cpp']]],
-  ['solve_5fquadratic_5fequation_1',['solve_quadratic_equation',['../solve__quadratic__eq_8h.html#a538c5f65528a4ab653351fdad2a42ee9',1,'solve_quadratic_equation(double a, double b, double c, double *answer1, double *answer2):&#160;solve_quadratic_eq.cpp'],['../solve__quadratic__eq_8cpp.html#a538c5f65528a4ab653351fdad2a42ee9',1,'solve_quadratic_equation(double a, double b, double c, double *answer1, double *answer2):&#160;solve_quadratic_eq.cpp']]]
+  ['run_5fdefault_5ftests_0',['run_default_tests',['../test_8h.html#aba39c81027003d61d9a4c1f582aa2db7',1,'run_default_tests():&#160;test.cpp'],['../test_8cpp.html#aba39c81027003d61d9a4c1f582aa2db7',1,'run_default_tests():&#160;test.cpp']]],
+  ['run_5ffile_5ftests_1',['run_file_tests',['../test_8h.html#a0fea33c3124532859702cead89a82c74',1,'run_file_tests(const char *file_name):&#160;test.cpp'],['../test_8cpp.html#a0fea33c3124532859702cead89a82c74',1,'run_file_tests(const char *file_name):&#160;test.cpp']]]
 ];

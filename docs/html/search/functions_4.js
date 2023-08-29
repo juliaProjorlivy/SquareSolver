@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['run_5fdefault_5ftests_0',['run_default_tests',['../test_8h.html#aba39c81027003d61d9a4c1f582aa2db7',1,'run_default_tests():&#160;test.cpp'],['../test_8cpp.html#aba39c81027003d61d9a4c1f582aa2db7',1,'run_default_tests():&#160;test.cpp']]],
-  ['run_5ftests_1',['run_tests',['../test_8h.html#ac408c33c2e6bf6fa70be819ced0f40e7',1,'run_tests(const char *file_name):&#160;test.cpp'],['../test_8cpp.html#ac408c33c2e6bf6fa70be819ced0f40e7',1,'run_tests(const char *file_name):&#160;test.cpp']]]
+  ['print_5froots_0',['print_roots',['../io_8h.html#ae7327d58ae48a7177d34e3b55e4dc0d2',1,'print_roots(enum NUMBER_OF_SOLUTIONS number_of_roots, double answer1, double answer2):&#160;io.cpp'],['../io_8cpp.html#ae7327d58ae48a7177d34e3b55e4dc0d2',1,'print_roots(enum NUMBER_OF_SOLUTIONS number_of_roots, double answer1, double answer2):&#160;io.cpp']]]
 ];

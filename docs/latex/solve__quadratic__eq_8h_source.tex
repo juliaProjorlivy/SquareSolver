@@ -2,11 +2,11 @@
 \hypertarget{solve__quadratic__eq_8h_source}{}\label{solve__quadratic__eq_8h_source}\index{include/solve\_quadratic\_eq.h@{include/solve\_quadratic\_eq.h}}
 \mbox{\hyperlink{solve__quadratic__eq_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \ \textcolor{comment}{/*\ ============================================================================}}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ ============================================================================}}
 \DoxyCodeLine{00002\ \textcolor{comment}{\ *}}
 \DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ \ Filename:\ \ solve\_quadratic\_eq.h}}
 \DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ Description:\ \ Header\ file\ of\ the\ quadtratid\ equation\ function}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ Description:\ \ Header\ file\ for\ quadtratid\ equation\ function}}
 \DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
 \DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ Created:\ \ 24/03/2023}}
 \DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ \ Compiler:\ \ g++}}
@@ -27,12 +27,15 @@
 \DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56aff8f000f17437d1a3b73b28b746b9bb9}{INFINITY\_SOL}}\ =\ 3}
 \DoxyCodeLine{00026\ \};}
 \DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a6bb85104817dc6c298e57ae4a3b2b21f}{is\_equal}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ epsilon\ =\ \mbox{\hyperlink{solve__quadratic__eq_8h_a37f80f87b0223988379069998f2b1aca}{DEF\_EPSILON}});}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a70848b1895685cc6cde9035602ac5a13}{solve\_linear}}(\textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c,\ \textcolor{keywordtype}{double}\ *answer1,\ \textcolor{keywordtype}{int}\ number\_of\_roots);}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a538c5f65528a4ab653351fdad2a42ee9}{solve\_quadratic\_equation}}(\textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c,\ \textcolor{keywordtype}{double}\ *answer1,\ \textcolor{keywordtype}{double}\ *answer2);}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a6bb85104817dc6c298e57ae4a3b2b21f}{is\_equal}}\ (\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ epsilon\ =\ \mbox{\hyperlink{solve__quadratic__eq_8h_a37f80f87b0223988379069998f2b1aca}{DEF\_EPSILON}});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a430723b27d2f4ee767fa141ef1d21581}{is\_less}}\ (\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ epsilon\ =\ \mbox{\hyperlink{solve__quadratic__eq_8h_a37f80f87b0223988379069998f2b1aca}{DEF\_EPSILON}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56}{NUMBER\_OF\_SOLUTIONS}}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a2a768e8ed36b5c4b88f8ea62e6ee5ddd}{solve\_linear\_equation}}\ (\textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c,\ \textcolor{keywordtype}{double}\ *answer1);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{solve__quadratic__eq_8h_a86f066e806b540db554235d5b62a0f56}{NUMBER\_OF\_SOLUTIONS}}\ \mbox{\hyperlink{solve__quadratic__eq_8h_aa4f23d63a8ba9c1e59ed2eccbd829fa1}{solve\_quadratic\_equation}}\ (\textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c,\ \textcolor{keywordtype}{double}\ *answer1,\ \textcolor{keywordtype}{double}\ *answer2);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

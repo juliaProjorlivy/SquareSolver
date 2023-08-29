@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['infinity_5fsol_0',['INFINITY_SOL',['../solve__quadratic__eq_8h.html#a86f066e806b540db554235d5b62a0f56aff8f000f17437d1a3b73b28b746b9bb9',1,'solve_quadratic_eq.h']]]
+  ['ftest_5ffailure_0',['FTEST_FAILURE',['../test_8h.html#a7010bdd588d627529b5948acb89dc09dadb722c0f07478d797046ef2885f5e69b',1,'test.h']]],
+  ['ftest_5fsuccess_1',['FTEST_SUCCESS',['../test_8h.html#a7010bdd588d627529b5948acb89dc09daf94ad90228e86090227d5c4068740c2b',1,'test.h']]]
 ];
