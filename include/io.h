@@ -1,4 +1,4 @@
- /* ============================================================================
+/* ============================================================================
  *
  *       Filename:  input.h
  *
@@ -12,10 +12,19 @@
 
 #ifndef INPUT_H
 #define INPUT_H
+#include "test.h"
+#include "solve_quadratic_eq.h"
+
+/*!
+    \brief runs test if user demands this via command line arguments key
+    \param[in] argc the number of arguments
+    \param[in] argv command line arguments
+    \return 
+*/
+enum TEST_STATE whether_to_run_tests(int argc, const char *argv[]);
 
 /*!
     \brief Clears the input buffer
-    \param is_eof indicate the EOF
 */
 void clear_buf();
 
@@ -27,12 +36,11 @@ void clear_buf();
     \return the number of parametrs that were read
 
 */
-int get_coefficients (double *a, double *b, double *c);
+int get_coefficients(double *a, double *b, double *c);
 
 /*!
     \brief prints the answers to the quadratic equation
-    \param is_eof indicate the EOF
 */
-void print_roots (int number_of_roots, double answer1, double answer2);
+void print_roots(enum NUMBER_OF_SOLUTIONS number_of_roots, double answer1, double answer2);
 
 #endif

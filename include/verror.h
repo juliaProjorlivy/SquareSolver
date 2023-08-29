@@ -22,7 +22,8 @@
 */
 #define VERROR(...) do {                                       \
         fprintf (stderr, RED "%s (%d): ", __FILE__, __LINE__); \
-        verror (__VA_ARGS__);                                   \
+        verror (__VA_ARGS__);                                  \
+        fprintf (stderr, END_OF_COLOR);                        \
     } while (0)
 
 void verror (const char *description, ...);

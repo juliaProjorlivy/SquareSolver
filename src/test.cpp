@@ -15,9 +15,9 @@ struct test{
 };
 
 /*!
-	\brief test sovle_quadratic_equation function 
+	\brief test solve_quadratic_equation function 
     \param[inout] data the test structure 
-    \return 1 test passed successfully and 0 if not
+    \return 1 if test passed successfully and 0 if not
     
 */
 static int test_square (const test *data){
@@ -28,9 +28,9 @@ static int test_square (const test *data){
     double answer2 = 0;
     int nRoots = solve_quadratic_equation (data->abc[0], data->abc[1], data->abc[2], &answer1, &answer2);
 
-    if(!is_equal (answer1, data->answersRef[0], TEST_ACCURACY) 
-        || !is_equal (answer2, data->answersRef[1], TEST_ACCURACY) 
-        || nRoots != (data->nRootsRef))
+    if(!is_equal (answer1, data->answersRef[0], TEST_ACCURACY) ||
+       !is_equal (answer2, data->answersRef[1], TEST_ACCURACY) ||
+       nRoots != (data->nRootsRef))
     {
         printf (RED "test case failed:\n" END_OF_COLOR);
         printf ("x1 = %lf; x2 = %lf; nRoots = %d\n"
@@ -38,7 +38,7 @@ static int test_square (const test *data){
                 nRoots, data->answersRef[0], data->answersRef[1], data->nRootsRef);
     }
 
-    printf (GREEN "test case passed successully" END_OF_COLOR);
+    printf (GREEN "test case passed successfully" END_OF_COLOR);
     return 0;
 }
 
@@ -54,11 +54,10 @@ void run_default_tests()
 
     size_t length = sizeof (tests) / sizeof (tests[0]);
 
-    for (int index = 0; index < (int)length; index++){
+    for (size_t index = 0; index < length; index++){
         test_square (tests + index);
     }
 }
-
 
 int run_file_tests (const char *file_name)
 {

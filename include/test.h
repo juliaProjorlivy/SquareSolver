@@ -22,7 +22,8 @@
 enum TEST_STATE 
 {
     FTEST_SUCCESS, 
-    FTEST_FAILURE
+    FTEST_FAILURE,
+    TESTS_NO_LAUNCH
 };
 
 /**

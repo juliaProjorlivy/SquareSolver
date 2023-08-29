@@ -38,7 +38,6 @@ int is_equal (double x, double y, double epsilon = DEF_EPSILON);
     \brief determines if x is less than y
     \param epsilon the precision number which by defualt equals EPSILON = 1e-9
     \return 1 if x is less than y and 0 if not
-
 */
 int is_less (double x, double y, double epsilon = DEF_EPSILON);
 
@@ -49,7 +48,7 @@ int is_less (double x, double y, double epsilon = DEF_EPSILON);
     \param[inout] answer1 linear equation root
     \return the number of linear equation roots
 */
-int solve_linear_equation (double b, double c, double *answer1, int number_of_roots);
+enum NUMBER_OF_SOLUTIONS solve_linear_equation (double b, double c, double *answer1);
 
 /*!
     \brief solve the quadratic equation
@@ -60,6 +59,6 @@ int solve_linear_equation (double b, double c, double *answer1, int number_of_ro
     \param[inout] answer1 one of quadratic roots
     \return the number of quadratic equation roots
 */
-int solve_quadratic_equation (double a, double b, double c, double *answer1, double *answer2);
+enum NUMBER_OF_SOLUTIONS solve_quadratic_equation (double a, double b, double c, double *answer1, double *answer2);
 
 #endif

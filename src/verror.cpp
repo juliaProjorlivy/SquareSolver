@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-void verror(const char *description, ...) // FILE*
+void verror(const char *description, ...)
 {
     fprintf (stderr, "ERROR: ");
 
@@ -10,6 +10,4 @@ void verror(const char *description, ...) // FILE*
     va_start (args, description);
     vfprintf (stderr, description, args);
     va_end (args);
-
-    fprintf (stderr, END_OF_COLOR);
 }
