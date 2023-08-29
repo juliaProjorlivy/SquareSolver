@@ -16,14 +16,24 @@
 
 #define GREEN "\033[92m"    /**< paint command line text green */  
 
+/**
+ * For comfortable usage of 1 and 0 in return
+ */
 enum TEST_STATE 
 {
     FTEST_SUCCESS, 
     FTEST_FAILURE
 };
 
+/**
+ * Run default tests
+ */
 void run_default_tests();
 
+/**
+ * Run tests from the file. Takes the file name.
+ * \param[in] file_name the name of the file
+ */
 int run_file_tests (const char *file_name);
 
 #endif

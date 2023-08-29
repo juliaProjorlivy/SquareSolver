@@ -25,12 +25,41 @@ enum NUMBER_OF_SOLUTIONS
     INFINITY_SOL = 3
 };
 
+
+/*!
+    \brief compare two numbers up to epsilon
+    \param epsilon the precision number which by defualt equals EPSILON = 1e-9
+    \return 1 if two numbers are equal and 0 if not
+
+*/
 int is_equal (double x, double y, double epsilon = DEF_EPSILON);
 
+/*!
+    \brief determines if x is less than y
+    \param epsilon the precision number which by defualt equals EPSILON = 1e-9
+    \return 1 if x is less than y and 0 if not
+
+*/
 int is_less (double x, double y, double epsilon = DEF_EPSILON);
 
-int solve_linear (double b, double c, double *answer1, int number_of_roots);
+/*!
+    \brief solve the linear equation
+    \param[in] b coefficient before x
+    \param[in] c free term of linear equation
+    \param[inout] answer1 linear equation root
+    \return the number of linear equation roots
+*/
+int solve_linear_equation (double b, double c, double *answer1, int number_of_roots);
 
+/*!
+    \brief solve the quadratic equation
+    \param[in] a quadratic coefficient before x^2
+    \param[in] b quadratic coefficient before x
+    \param[in] c free term of quadratic equation
+    \param[inout] answer1 one of quadratic roots
+    \param[inout] answer1 one of quadratic roots
+    \return the number of quadratic equation roots
+*/
 int solve_quadratic_equation (double a, double b, double c, double *answer1, double *answer2);
 
 #endif

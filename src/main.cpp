@@ -1,16 +1,3 @@
-/*
- * ============================================================================
- *
- *       Filename:  main.cpp
- *
- *    Description:  The main file of the project
- *
- *        Created:  24/08/2023
- *       Compiler:  g++
- *
- * ============================================================================
- */
-
 #include "verror.h"
 #include "io.h"
 #include "solve_quadratic_eq.h"

@@ -1,17 +1,3 @@
-/*
- * ============================================================================
- *
- *       Filename:  test.cpp
- *
- *    Description:  Run tests
- *
- *        Created:  24/08/2023 
- *       Compiler:  g++
- * 
- * ============================================================================
- */
-
-
 #include "verror.h"
 #include "solve_quadratic_eq.h"
 #include "test.h"
@@ -20,13 +6,8 @@
 #include <math.h>
 
 /*!
-
 	\brief  data template for tests
-    
 */
-
-// const int a_indx = 0;
-
 struct test{
     double abc[3]; //! quadratic equation coefficients
     double answersRef[2]; //! solution to the quadratic equation
@@ -61,9 +42,7 @@ static int test_square (const test *data){
     return 0;
 }
 
-/**
- * Run default tests
- */
+
 void run_default_tests()
 {
 //                    a       b     c   x1               x2  nRoots
@@ -80,10 +59,7 @@ void run_default_tests()
     }
 }
 
-/**
- * Run tests from the file. Takes the file name.
- * \param[in] file_name the name of the file
- */
+
 int run_file_tests (const char *file_name)
 {
     assert (file_name != NULL);

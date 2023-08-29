@@ -16,8 +16,10 @@
 #define RED          "\x1b[31;1m"  /**< paint command line text red */  
 #define END_OF_COLOR "\n\x1b[39;49m"  /**< paint command line default color */
 
-// #define GREEN(string) "\x1b[...]" string "\n\x1b"
 
+/*!
+    \brief Print the error description, file and line where an error happened.
+*/
 #define VERROR(...) do {                                       \
         fprintf (stderr, RED "%s (%d): ", __FILE__, __LINE__); \
         verror (__VA_ARGS__);                                   \

@@ -1,22 +1,7 @@
-/*
- * ============================================================================
- *
- *       Filename:  verror.cpp
- *
- *    Description:  Find an error
- *
- *        Created:  24/08/2023
- *       Compiler:  g++
- *
- * ============================================================================
- */
 #include "verror.h"
 #include <stdio.h>
 #include <stdarg.h>
 
-/*!
-    \brief Print the error description, file and line where an error happened.
-*/
 void verror(const char *description, ...) // FILE*
 {
     fprintf (stderr, "ERROR: ");

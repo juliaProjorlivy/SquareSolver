@@ -1,26 +1,7 @@
-/*
- * ============================================================================
- *
- *       Filename:  solve_qudratic_eq.cpp
- *
- *    Description:  Quadratic equation solver
- *
- *        Created:  24/08/2023
- *       Compiler:  g++
- *
- * ============================================================================
- */
-
 #include "solve_quadratic_eq.h"
 #include <assert.h>
 #include <math.h>
 
-/*!
-    \brief compare two numbers up to epsilon
-    \param epsilon the precision number which by defualt equals EPSILON = 1e-9
-    \return 1 if two numbers are equal and 0 if not
-
-*/
 int is_equal (double x, double y, double epsilon)
 {
     assert (isfinite (x));
@@ -34,15 +15,7 @@ int is_less (double x, double y, double epsilon)
     return ((x - y < epsilon) && (fabs (x - y) >= epsilon));
 }
 
-/*!
-    \brief solve the linear equation
-    \param[in] b coefficient before x
-    \param[in] c free term of linear equation
-    \param[inout] answer1 linear equation root
-    \return the number of linear equation roots
-*/
-// solve_linear_equation
-int solve_linear (double b, double c, double *answer1, int number_of_roots)
+int solve_linear_equation (double b, double c, double *answer1, int number_of_roots)
 {
     assert (isfinite (b));
     assert (isfinite (c));
@@ -63,15 +36,6 @@ int solve_linear (double b, double c, double *answer1, int number_of_roots)
     return number_of_roots;
 }
 
-/*!
-    \brief solve the quadratic equation
-    \param[in] a quadratic coefficient before x^2
-    \param[in] b quadratic coefficient before x
-    \param[in] c free term of quadratic equation
-    \param[inout] answer1 one of quadratic roots
-    \param[inout] answer1 one of quadratic roots
-    \return the number of quadratic equation roots
-*/
 int solve_quadratic_equation (double a, double b, double c, double *answer1, double *answer2)
 {
     assert (isfinite (a));
@@ -89,7 +53,7 @@ int solve_quadratic_equation (double a, double b, double c, double *answer1, dou
     }
     if (is_equal (a, 0))
     {
-        return (solve_linear (b, c, answer1, number_of_roots));
+        return (solve_linear_equation (b, c, answer1, number_of_roots));
     }
     if (is_equal (d, 0))
     {
