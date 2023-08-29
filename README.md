@@ -8,7 +8,7 @@ To compile:
 $ make
 ```
 ## Usage
-```console
+```
 $ ./solve_square.exe
 ```
 Example run:
@@ -28,13 +28,13 @@ x2 = -0.649000
 Example:
 
     ///successful launch
-    $ make tests
-    $ ./testing.exe --UnitTest
+    $ make
+    $ ./solve_square.exe --UnitTest
     test case passed successully
 
     ///failed launch
-    $ make tests
-    $ ./testing.exe --UnitTest
+    $ make
+    $ ./solve_square.exe --UnitTest
     test case failed
     x1 = 0.000000; x2 = 0.000000; nRoots = 0
     expected:

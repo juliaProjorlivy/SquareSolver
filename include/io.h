@@ -17,4 +17,6 @@ void clear_buf();
 
 int get_coefficients (double *a, double *b, double *c);
 
+void print_roots (int number_of_roots, double answer1, double answer2);
+
 #endif

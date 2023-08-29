@@ -11,23 +11,22 @@
  * ============================================================================
  */
 
+
+#include "verror.h"
 #include "solve_quadratic_eq.h"
 #include "test.h"
-#include "verror.h"
 #include <assert.h>
 #include <stdio.h>
 #include <math.h>
-
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <stdlib.h>
 
 /*!
 
 	\brief  data template for tests
     
 */
+
+// const int a_indx = 0;
+
 struct test{
     double abc[3]; //! quadratic equation coefficients
     double answersRef[2]; //! solution to the quadratic equation
@@ -43,13 +42,13 @@ struct test{
 static int test_square (const test *data){
     assert (data != NULL);
 
-    int success = 0;
-    const double EPSILON2 = 1e-5; /**< the equivalent number */ 
-    double answer1 = 0, answer2 = 0;
+    const double TEST_ACCURACY = 1e-5; /**< accuracy is up to 5 decimal places*/ 
+    double answer1 = 0;
+    double answer2 = 0;
     int nRoots = solve_quadratic_equation (data->abc[0], data->abc[1], data->abc[2], &answer1, &answer2);
 
-    if(!is_equal (answer1, data->answersRef[0], EPSILON2) 
-        || !is_equal (answer2, data->answersRef[1], EPSILON2) 
+    if(!is_equal (answer1, data->answersRef[0], TEST_ACCURACY) 
+        || !is_equal (answer2, data->answersRef[1], TEST_ACCURACY) 
         || nRoots != (data->nRootsRef))
     {
         printf (RED "test case failed:\n" END_OF_COLOR);
@@ -57,12 +56,9 @@ static int test_square (const test *data){
                 "expected:\nx1 = %lf; x2 = %lf; nRoots = %d\n ", answer1, answer2,
                 nRoots, data->answersRef[0], data->answersRef[1], data->nRootsRef);
     }
-    else
-    {
-        success = 1;
-        printf (GREEN "test case passed successully" END_OF_COLOR);
-    }
-    return success;
+
+    printf (GREEN "test case passed successully" END_OF_COLOR);
+    return 0;
 }
 
 /**
@@ -88,7 +84,7 @@ void run_default_tests()
  * Run tests from the file. Takes the file name.
  * \param[in] file_name the name of the file
  */
-int run_tests (const char *file_name)
+int run_file_tests (const char *file_name)
 {
     assert (file_name != NULL);
 
@@ -102,10 +98,12 @@ int run_tests (const char *file_name)
         return FTEST_FAILURE;
     }
 
+    int nData = 6;
+
     while ((fscanf (file, "%lf %lf %lf %lf %lf %d", 
         test_data.abc, test_data.abc + 1, test_data.abc + 2, 
         test_data.answersRef, test_data.answersRef + 1, 
-        &(test_data.nRootsRef)) == 6))
+        &(test_data.nRootsRef)) == nData))
         {
             test_square (&test_data);
         }

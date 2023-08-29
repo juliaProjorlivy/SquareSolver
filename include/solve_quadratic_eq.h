@@ -25,12 +25,12 @@ enum NUMBER_OF_SOLUTIONS
     INFINITY_SOL = 3
 };
 
-int is_equal(double x, double y, double epsilon = DEF_EPSILON);
+int is_equal (double x, double y, double epsilon = DEF_EPSILON);
 
-int is_less(double x, double y, double epsilon = DEF_EPSILON);
+int is_less (double x, double y, double epsilon = DEF_EPSILON);
 
-int solve_linear(double b, double c, double *answer1, int number_of_roots);
+int solve_linear (double b, double c, double *answer1, int number_of_roots);
 
-int solve_quadratic_equation(double a, double b, double c, double *answer1, double *answer2);
+int solve_quadratic_equation (double a, double b, double c, double *answer1, double *answer2);
 
 #endif

@@ -17,14 +17,14 @@
 /*!
     \brief Print the error description, file and line where an error happened.
 */
-void verror(const char *description, ...)
+void verror(const char *description, ...) // FILE*
 {
-    fprintf(stderr, "ERROR: ");
+    fprintf (stderr, "ERROR: ");
 
     va_list args;
-    va_start(args, description);
-    vfprintf(stderr, description, args);
-    va_end(args);
+    va_start (args, description);
+    vfprintf (stderr, description, args);
+    va_end (args);
 
-    fprintf(stderr, END_OF_COLOR);
+    fprintf (stderr, END_OF_COLOR);
 }

@@ -16,10 +16,14 @@
 
 #define GREEN "\033[92m"    /**< paint command line text green */  
 
-enum TEST_STATE {FTEST_SUCCESS, FTEST_FAILURE};
+enum TEST_STATE 
+{
+    FTEST_SUCCESS, 
+    FTEST_FAILURE
+};
 
 void run_default_tests();
 
-int run_tests (const char *file_name);
+int run_file_tests (const char *file_name);
 
 #endif
